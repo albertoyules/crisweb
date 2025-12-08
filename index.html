@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <!-- GOOGLE ANALYTICS (Puesto aquí arriba para máxima precisión) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKP2823973"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-RKP2823973');
+    </script>
+    <!-- FIN GOOGLE ANALYTICS -->
+    
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="uLi5lasYwN8YKbzZ03EybZqFBm4jWc1R9jALFFpEb6o" />
+    
+    <!-- TÍTULO Y SEO AVANZADO -->
+    <title>Cristina Yules | Creadora de Contenido UGC & Estrategia Digital</title>
+    <meta name="description" content="Soy Cristina Yules (Cristi Yules), creadora de contenido UGC en Málaga. Conecto marcas con su público a través de vídeos auténticos, storytelling y estrategia digital.">
+    <!-- Palabras clave recuperadas y mejoradas -->
+    <meta name="keywords" content="Cristina Yules, Cristi Yules, UGC Creator España, Creadora de Contenido Málaga, User Generated Content, Vídeos para marcas, Estrategia TikTok, Reels Instagram, Cristi UGC">
+    <meta name="author" content="Cristina Yules">
+    <meta name="robots" content="index, follow">
+    <!-- Etiqueta Canónica (Vital para SEO) -->
+    <link rel="canonical" href="https://www.cristiyules.com/">
+    
+    <!-- OPTIMIZACIÓN CRÍTICA PARA MÓVIL (LCP) -->
+    <link rel="preload" as="image" href="/FOTOS/1ipad.jpg" media="(max-width: 768px)">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- DATOS ESTRUCTURADOS (JSON-LD) - LA JOYA DEL SEO -->
+    <!-- Esto le explica a Google explícitamente quién eres -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Cristina Yules",
+        "alternateName": "Cristi Yules",
+        "url": "https://www.cristiyules.com",
+        "image": "https://www.cristiyules.com/FOTOS/1ipad.jpg",
+        "sameAs": [
+        "https://www.instagram.com/cristiugc/",
+        "https://www.tiktok.com/@cristiyules",
+        "https://www.linkedin.com/in/cristina-yules-núñez-686548203/"
+        ],
+        "jobTitle": "Creadora de Contenido UGC",
+        "description": "Creadora de contenido UGC experta en conectar marcas con audiencias a través de storytelling auténtico.",
+        "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Málaga",
+        "addressCountry": "ES"
+        }
+    }
+    </script>
+
+    <!-- REDES SOCIALES (Open Graph) -->
+    <meta property="og:title" content="Cristina Yules - UGC Creator">
+    <meta property="og:description" content="Ayudo a tu marca a conectar con su audiencia con contenido real y estratégico.">
+    <meta property="og:image" content="https://www.cristiyules.com/FOTOS/1ipad.jpg">
+    <meta property="og:url" content="https://www.cristiyules.com">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/jpeg" href="/FOTOS/favicon.jpeg">
+
+    <!-- TAILWIND (CDN optimizado) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brown: { 900: '#3E2723', 800: '#4E342E', 600: '#795548', 100: '#D7CCC8' },
+                        rust: { 500: '#A0522D', 600: '#8B4513', 700: '#703810' }, 
+                        beige: { custom: '#F5F1E8', dark: '#E6E0D4' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .font-impact { font-family: 'Impact', 'Anton', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+        .font-body { font-family: 'Montserrat', sans-serif; }
+        .font-handwriting { font-family: 'Nothing You Could Do', cursive; }
+        
+        @media (max-width: 768px) {
+            .slide-track { width: 3000px; } 
+        }
+        
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-3000px); } }
+        .slider { height: 100px; margin: auto; overflow: hidden; position: relative; width: 100%; }
+        .slide-track { display: flex; width: 6000px; animation: scroll 40s linear infinite; will-change: transform; }
+        .slide { height: 100px; width: 200px; display: flex; align-items: center; justify-content: center; padding: 0 15px; }
+        .slide img { max-height: 60px; width: auto; object-fit: contain; filter: grayscale(100%) sepia(50%); opacity: 0.7; transition: all 0.3s; }
+        .slide img:hover { filter: grayscale(0%); opacity: 1; }
+        
+        .horizontal-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+        .horizontal-scroll::-webkit-scrollbar { display: none; }
+        
+        video { background-color: #f3f3f3; cursor: pointer; } 
+        .reviews-container { overflow: hidden; position: relative; }
+        .reviews-track { display: flex; transition: transform 0.5s ease-in-out; }
+        .review-group { min-width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding: 1rem; }
+        @media (max-width: 768px) { .review-group { grid-template-columns: 1fr; } }
+        
+        /* ACCESIBILIDAD */
+        .high-contrast { background-color: #000 !important; color: #FFF !important; }
+        .high-contrast section { background-color: #000 !important; border-color: #FFF !important; }
+        .high-contrast h1, .high-contrast h2, .high-contrast h3, .high-contrast p, .high-contrast span, .high-contrast i { color: #ffff00 !important; }
+        .high-contrast a { color: #00ffff !important; text-decoration: underline; }
+        .high-contrast .bg-white { background-color: #000 !important; border: 1px solid #fff; }
+        .high-contrast .bg-beige-dark, .high-contrast .bg-orange-50 { background-color: #1a1a1a !important; }
+        
+        .text-large p, .text-large li, .text-large a { font-size: 1.25rem !important; line-height: 1.8 !important; }
+    </style>
+</head>
+
+
+
+    
+<body class="font-body text-brown-800 overflow-x-hidden bg-beige-custom transition-all duration-300">
+
+    <!-- BOTÓN FLOTANTE ACCESIBILIDAD -->
+    <div class="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-2">
+        <div id="accessMenu" class="hidden bg-white border-2 border-brown-900 rounded-lg p-4 shadow-xl mb-2 w-64">
+            <h4 class="font-impact text-lg mb-3" data-translate="settings">CONFIGURACIÓN</h4>
+            <div class="mb-4">
+                <p class="text-xs font-bold mb-2 uppercase" data-translate="language">Idioma</p>
+                <div class="flex gap-2">
+                    <button onclick="setLanguage('es')" class="px-3 py-1 bg-brown-100 hover:bg-rust-500 hover:text-white rounded text-sm transition-colors font-bold" aria-label="Cambiar a Español">ES</button>
+                    <button onclick="setLanguage('en')" class="px-3 py-1 bg-brown-100 hover:bg-rust-500 hover:text-white rounded text-sm transition-colors font-bold" aria-label="Switch to English">EN</button>
+                </div>
+            </div>
+            <div>
+                <p class="text-xs font-bold mb-2 uppercase" data-translate="accessibility">Accesibilidad</p>
+                <button onclick="toggleContrast()" class="w-full mb-2 px-3 py-2 bg-black text-yellow-300 border border-gray-700 rounded text-sm flex items-center justify-between" aria-label="Activar alto contraste">
+                    <span data-translate="highContrast">Alto Contraste</span> <i class="fas fa-adjust"></i>
+                </button>
+                <button onclick="toggleTextSize()" class="w-full px-3 py-2 bg-white text-brown-900 border border-brown-200 rounded text-sm flex items-center justify-between hover:bg-gray-50" aria-label="Aumentar tamaño de texto">
+                    <span data-translate="textSize">Texto Grande</span> <i class="fas fa-text-height"></i>
+                </button>
+            </div>
+        </div>
+        <button onclick="document.getElementById('accessMenu').classList.toggle('hidden')" class="w-12 h-12 bg-brown-900 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-rust-500 transition-colors" aria-label="Abrir menú de accesibilidad">
+            <i class="fas fa-universal-access text-xl"></i>
+        </button>
+    </div>
+
+    <!-- SECCIÓN 1: PORTADA -->
+    <section class="min-h-screen bg-white flex flex-col justify-center items-center relative py-10 md:py-20">
+        <div class="text-center z-10 mb-8 w-full px-4">
+            <h1 class="font-impact text-7xl md:text-9xl text-brown-900 leading-tight">
+                CRISTINA<br>
+                <span class="text-brown-600">YULES</span>
+            </h1>
+            <!-- Cambio de color a rust-600 para mejorar contraste -->
+            <h2 class="mt-2 text-xl md:text-2xl tracking-widest uppercase text-rust-600 font-bold font-body" data-translate="role">Creadora de Contenido UGC</h2>
+            
+            <div class="flex justify-center gap-4 mt-5">
+                <a href="https://www.instagram.com/cristiugc/" target="_blank" aria-label="Visitar Instagram de Cristina" class="w-12 h-12 rounded-full bg-brown-100 flex items-center justify-center text-brown-900 hover:bg-rust-500 hover:text-white transition-all transform hover:scale-110 shadow-sm">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="https://www.tiktok.com/@cristiyules" target="_blank" aria-label="Visitar TikTok de Cristina" class="w-12 h-12 rounded-full bg-brown-100 flex items-center justify-center text-brown-900 hover:bg-rust-500 hover:text-white transition-all transform hover:scale-110 shadow-sm">
+                    <i class="fab fa-tiktok text-2xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/cristina-yules-núñez-686548203/" target="_blank" aria-label="Visitar LinkedIn de Cristina" class="w-12 h-12 rounded-full bg-brown-100 flex items-center justify-center text-brown-900 hover:bg-rust-500 hover:text-white transition-all transform hover:scale-110 shadow-sm">
+                    <i class="fab fa-linkedin-in text-2xl"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8 items-center justify-center w-full max-w-6xl px-4">
+            <!-- ESTRUCTURA PICTURE PARA IMÁGENES RESPONSIVAS -->
+            <!-- Esto ayuda a que el móvil no descargue la imagen gigante si tuvieras versiones pequeñas -->
+            <div class="w-full md:w-1/3 aspect-[3/4] bg-brown-100 relative overflow-hidden shadow-xl transform rotate-[-3deg] hover:rotate-0 transition-transform duration-500 border-4 border-white">
+                <img src="/FOTOS/1ipad.jpg" 
+                     alt="Cristina Yules creando contenido con iPad" 
+                     width="600" height="800" 
+                     class="w-full h-full object-cover" 
+                     loading="eager" 
+                     decoding="async"
+                     fetchpriority="high">
+                <div class="absolute bottom-4 left-4 bg-white/95 px-3 py-1 font-impact text-sm text-brown-900">UGC Creator</div>
+            </div>
+            
+            <div class="w-full md:w-1/3 aspect-[3/4] bg-brown-100 relative overflow-hidden shadow-xl transform rotate-[3deg] hover:rotate-0 transition-transform duration-500 mt-10 md:mt-0 border-4 border-white">
+                <img src="/FOTOS/2selfie.JPG" 
+                     alt="Cristina Yules en Málaga" 
+                     width="600" height="800" 
+                     class="w-full h-full object-cover" 
+                     loading="eager" 
+                     decoding="async"
+                     fetchpriority="high">
+                <div class="absolute bottom-4 right-4 bg-white/95 px-3 py-1 font-impact text-sm text-brown-900">Málaga, España</div>
+            </div>
+        </div>
+
+        <nav class="flex flex-wrap justify-center gap-6 md:gap-8 mt-8 text-base font-impact tracking-wide text-brown-800" aria-label="Menú principal">
+            <a href="#about" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navWhy">¿POR QUÉ YO?</a>
+            <a href="#portfolio" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navVideos">VÍDEOS</a>
+            <a href="#reviews" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navReviews">OPINIONES</a>
+            <a href="#contact" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navContact">CONTACTO</a>
+        </nav>
+    </section>
+
+    <!-- SECCIÓN 2: ¿POR QUÉ YO? -->
+    <section id="about" class="py-24 bg-beige-dark relative">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-right mb-16">
+                <h2 class="font-impact text-6xl md:text-8xl text-brown-900 inline-block border-b-8 border-white pb-2" data-translate="whyTitle">
+                    ¿POR QUÉ YO?
+                </h2>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 relative">
+                    <!-- lazy loading para imagen secundaria -->
+                    <img src="/FOTOS/3sentada presentacion.JPG" alt="Cristina Yules presentación" loading="lazy" width="600" height="800" class="w-full h-auto relative z-10 shadow-lg border-4 border-white">
+                </div>
+                
+                <div class="w-full md:w-1/2 text-lg leading-relaxed text-brown-900 font-medium">
+                    <p class="mb-6" data-translate="bio1">
+                        Soy graduada en <span class="font-bold bg-white px-1 text-rust-600">publicidad y relaciones públicas</span>, y amo la comunicación.
+                    </p>
+                    <p class="mb-6" data-translate="bio2">
+                        Hace tiempo que perdí la vergüenza, y mi mayor hobby es <span class="font-bold bg-white px-1 text-rust-600">grabarlo TODO</span>.
+                    </p>
+                    <p>
+                        <span data-translate="bio3">Como creadora UGC soy </span><span class="font-bold bg-white px-1 text-rust-600" data-translate="bio3strong">espontánea y natural</span><span data-translate="bio3end">, pero también una comunicadora estratégica.</span>
+                        <br><br>
+                        <span class="font-handwriting text-3xl block mt-4 rotate-[-2deg] text-rust-600" data-translate="bioCall">¿Te animas a comprobarlo?</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CARRUSEL DE MARCAS -->
+    <section class="py-16 bg-white overflow-hidden" aria-label="Marcas colaboradoras">
+        <div class="container mx-auto px-6 mb-8 text-center">
+            <h3 class="font-impact text-5xl text-brown-900" data-translate="brandsTitle">MARCAS QUE HAN CONFIADO EN MÍ</h3>
+        </div>
+        <div class="slider mb-4">
+            <div class="slide-track">
+                <!-- Lazy load en todas las marcas -->
+                <div class="slide"><img src="/FOTOS/Bolt_logo.png" loading="lazy" alt="Bolt logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/FREE_NOW_Logo.png" loading="lazy" alt="Free Now logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/Airalo_logo.svg.png" loading="lazy" alt="Airalo logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/civitatis.png" loading="lazy" alt="Civitatis logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/logo-kampaoh-2021.png" loading="lazy" alt="Kampaoh logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/spotahome.png" loading="lazy" alt="Spotahome logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/showroom.png" loading="lazy" alt="Showroomprive logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/Dia_Logo.svg.png" loading="lazy" alt="Dia logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/Dunkin'_logo.png" loading="lazy" alt="Dunkin logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/Logo_Klayful_sin_fondo_0d88fd18-2bde-4428-a983-d69d6b102396.png.webp" loading="lazy" alt="Klayful logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/incapto_new_green_big.png" loading="lazy" alt="Incapto logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/jelly.png" loading="lazy" alt="Jelly logo" width="200" height="100"></div>
+                <!-- Duplicados -->
+                <div class="slide"><img src="/FOTOS/Bolt_logo.png" loading="lazy" alt="Bolt logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/FREE_NOW_Logo.png" loading="lazy" alt="Free Now logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/Airalo_logo.svg.png" loading="lazy" alt="Airalo logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/civitatis.png" loading="lazy" alt="Civitatis logo" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/logo-kampaoh-2021.png" loading="lazy" alt="Kampaoh logo" width="200" height="100"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIONES -->
+    <!--<section id="reviews" class="py-20 bg-beige-dark">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-12">
+                <h2 class="font-impact text-5xl md:text-6xl text-brown-900" data-translate="reviewsTitle">OPINIONES DE MARCAS</h2>
+                <div class="w-24 h-1 bg-rust-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="reviews-container max-w-6xl mx-auto">
+                <div class="reviews-track" id="reviewsTrack">
+
+                    <div class="review-group">
+                        <div class="bg-orange-50 p-8 rounded-xl border border-orange-100 flex flex-col items-center text-center shadow-sm">
+                            <h4 class="font-impact text-xl text-brown-800 mb-2">MARCA 1</h4>
+                            <div class="text-rust-500 mb-3 text-sm" aria-label="5 estrellas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="text-sm italic text-brown-600">"El vídeo tuvo un rendimiento increíble en TikTok."</p>
+                        </div>
+                        <div class="bg-orange-50 p-8 rounded-xl border border-orange-100 flex flex-col items-center text-center shadow-sm">
+                            <h4 class="font-impact text-xl text-brown-800 mb-2">MARCA 2</h4>
+                            <div class="text-rust-500 mb-3 text-sm" aria-label="5 estrellas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="text-sm italic text-brown-600">"Profesional, rápida y creativa."</p>
+                        </div>
+                        <div class="bg-orange-50 p-8 rounded-xl border border-orange-100 flex flex-col items-center text-center shadow-sm">
+                            <h4 class="font-impact text-xl text-brown-800 mb-2">MARCA 3</h4>
+                            <div class="text-rust-500 mb-3 text-sm" aria-label="5 estrellas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="text-sm italic text-brown-600">"Aumentaron nuestras ventas un 20%."</p>
+                        </div>
+                    </div>
+
+                     <div class="review-group">
+                        <div class="bg-orange-50 p-8 rounded-xl border border-orange-100 flex flex-col items-center text-center shadow-sm">
+                            <h4 class="font-impact text-xl text-brown-800 mb-2">MARCA 4</h4>
+                            <div class="text-rust-500 mb-3 text-sm" aria-label="5 estrellas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="text-sm italic text-brown-600">"Increíble trabajo de storytelling."</p>
+                        </div>
+                        <div class="bg-orange-50 p-8 rounded-xl border border-orange-100 flex flex-col items-center text-center shadow-sm">
+                            <h4 class="font-impact text-xl text-brown-800 mb-2">MARCA 5</h4>
+                            <div class="text-rust-500 mb-3 text-sm" aria-label="5 estrellas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="text-sm italic text-brown-600">"Muy fácil trabajar con ella."</p>
+                        </div>
+                        <div class="bg-orange-50 p-8 rounded-xl border border-orange-100 flex flex-col items-center text-center shadow-sm">
+                            <h4 class="font-impact text-xl text-brown-800 mb-2">MARCA 6</h4>
+                            <div class="text-rust-500 mb-3 text-sm" aria-label="5 estrellas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="text-sm italic text-brown-600">"Resultados orgánicos brutales."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center gap-2 mt-6">
+                    <button class="w-3 h-3 rounded-full bg-rust-600 transition-colors" onclick="goToReviewSlide(0)" aria-label="Ver primer grupo de opiniones"></button>
+                    <button class="w-3 h-3 rounded-full bg-orange-200 hover:bg-rust-500 transition-colors" onclick="goToReviewSlide(1)" aria-label="Ver segundo grupo de opiniones"></button>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- SECCIÓN VÍDEOS -->
+    <section id="portfolio" class="py-24 bg-white relative">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center mb-20 relative">
+                <h2 class="font-impact text-[8rem] md:text-[12rem] text-beige-dark opacity-40 leading-none select-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-0">
+                    PORTFOLIO
+                </h2>
+                <h2 class="font-impact text-6xl md:text-8xl text-brown-900 relative z-10" data-translate="videosTitle">
+                    MIS VÍDEOS
+                </h2>
+                <div class="w-32 h-2 bg-rust-500 mx-auto mt-4 relative z-10"></div>
+            </div>
+
+            <div class="mb-20">
+                <div class="flex items-center mb-8">
+                    <h3 class="font-impact text-4xl text-brown-800 bg-orange-100 px-4 py-2 inline-block transform -rotate-1" data-translate="catStreet">EN LA CALLE</h3>
+                    <div class="h-1 bg-orange-100 flex-grow ml-4"></div>
+                </div>
+                <div class="horizontal-scroll md:grid md:grid-cols-6 gap-6 pb-4 md:pb-0 items-start">
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <!-- OPTIMIZACIÓN: preload="none" aplicado a TODOS los vídeos -->
+                            <video src="/VIDEOS/EN LA CALLE/badhak.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">BADHAK</p>
+                    </div>
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/EN LA CALLE/bolt.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">BOLT</p>
+                    </div>
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/EN LA CALLE/thefruitcompany.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-sm uppercase tracking-wide leading-tight">THE FRUIT COMPANY</p>
+                    </div>
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/EN LA CALLE/binomial.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">BINOMIAL</p>
+                    </div>
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/EN LA CALLE//petroni.MP4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">PETRONI</p>
+                    </div>
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/EN LA CALLE/BRO.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">BRO</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-20">
+                <div class="flex items-center mb-8 flex-row-reverse">
+                    <h3 class="font-impact text-4xl text-brown-800 bg-orange-100 px-4 py-2 inline-block transform rotate-1" data-translate="catTravel">VIAJES</h3>
+                    <div class="h-1 bg-orange-100 flex-grow mr-4"></div>
+                </div>
+                <div class="horizontal-scroll md:grid md:grid-cols-6 gap-6 pb-4 md:pb-0 items-start">
+                    
+
+            
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/VIAJES/airalo.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">AIRALO</p>
+                    </div>
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/VIAJES/flightright.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">FLIGHTRIGHT</p>
+                    </div>
+                    <div class="md:col-span-2 min-w-[420px] md:min-w-0 snap-center flex flex-col">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                                <video src="/VIDEOS/VIAJES/civitatis1.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                            </div>
+                            <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                                <video src="/VIDEOS/VIAJES/civitatis2.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                            </div>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">CIVITATIS</p>
+                    </div>
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/VIAJES/kampaoh-2.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">KAMPAOH</p>
+                    </div>
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/VIAJES/ef.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">EF EDUCATION</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-20">
+                <div class="flex items-center mb-8">
+                    <h3 class="font-impact text-4xl text-brown-800 bg-orange-100 px-4 py-2 inline-block transform rotate-1" data-translate="catSports">DEPORTES</h3>
+                    <div class="h-1 bg-orange-100 flex-grow mr-4"></div>
+                </div>
+                <div class="horizontal-scroll md:grid md:grid-cols-6 gap-6 pb-4 md:pb-0 items-start">
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/DEPORTES/junglesocks.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">JUNGLE SOCKS</p>
+                    </div>
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/DEPORTES/showroomprive.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-sm uppercase tracking-wide leading-tight">SHOWROOMPRIVE</p>
+                    </div>
+                    
+                    <div class="md:col-span-2 min-w-[420px] md:min-w-0 snap-center flex flex-col">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                                <video src="/VIDEOS/DEPORTES/fitplanet1.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                            </div>
+                            <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                                <video src="/VIDEOS/DEPORTES/fitplanet2.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                            </div>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">FITPLANET</p>
+                    </div>
+            
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/DEPORTES/aethereum.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">AETHEREUM</p>
+                    </div>
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/DEPORTES/critenais.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">CRITENAIS</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-20">
+                <div class="flex items-center mb-8 flex-row-reverse">
+                    <h3 class="font-impact text-4xl text-brown-800 bg-orange-100 px-4 py-2 inline-block transform rotate-1" data-translate="catFood">ALIMENTACIÓN</h3>
+                    <div class="h-1 bg-orange-100 flex-grow mr-4"></div>
+                </div>
+                <div class="horizontal-scroll md:grid md:grid-cols-6 gap-6 pb-4 md:pb-0 items-start">
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/ALIMENTACION/wakeupcoffee.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">WAKE UP COFFEE</p>
+                    </div>
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/ALIMENTACION/fitia.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">FITIA</p>
+                    </div>
+            
+                    <div class="md:col-span-2 min-w-[420px] md:min-w-0 snap-center flex flex-col">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                                <video src="/VIDEOS/ALIMENTACION/supermercadosdia.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                            </div>
+                            <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                                <video src="/VIDEOS/ALIMENTACION/supermercados-dia2.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                            </div>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">SUPERMERCADOS DIA</p>
+                    </div>
+            
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/ALIMENTACION/dunkin.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">DUNKIN'</p>
+                    </div>
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/ALIMENTACION/fitnesspowerfood.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-sm uppercase tracking-wide leading-tight">FITNESS POWER FOOD</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: ENTRETENIMIENTO -->
+            <div class="mb-20">
+                <div class="flex items-center mb-8">
+                    <h3 class="font-impact text-4xl text-brown-800 bg-orange-100 px-4 py-2 inline-block transform rotate-1" data-translate="catEntertainment">ENTRETENIMIENTO</h3>
+                    <div class="h-1 bg-orange-100 flex-grow mr-4"></div>
+                </div>
+            
+                <div class="horizontal-scroll md:grid md:grid-cols-6 gap-6 pb-4 md:pb-0 items-start">
+                    
+                    <div class="md:col-span-2 min-w-[420px] md:min-w-0 snap-center flex flex-col">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                                <video src="/VIDEOS/ENTRETENIMIENTO/crackgames.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                            </div>
+                            <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                                <video src="/VIDEOS/ENTRETENIMIENTO/crackgames2.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                            </div>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">CRACKGAMES</p>
+                    </div>
+            
+                    <div class="md:col-span-2 min-w-[420px] md:min-w-0 snap-center flex flex-col">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                                <video src="/VIDEOS/ENTRETENIMIENTO/klayful1.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                            </div>
+                            <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                                <video src="/VIDEOS/ENTRETENIMIENTO/klayful2.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                            </div>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">KLAYFUL</p>
+                    </div>
+            
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/ENTRETENIMIENTO/marlovisuals.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">MARLO VISUALS</p>
+                    </div>
+            
+                    <div class="md:col-span-1 min-w-[200px] md:min-w-0 snap-center flex flex-col">
+                        <div class="aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+                            <video src="/VIDEOS/ENTRETENIMIENTO/supermercados dia.mp4#t=0.1" class="w-full h-full object-cover" controls playsinline preload="none"></video>
+                        </div>
+                        <p class="text-center font-impact text-brown-800 mt-3 text-lg uppercase tracking-wide">DIA</p>
+                    </div>
+            
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN: SERVICIOS -->
+    <section class="py-24 bg-beige-dark">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-left mb-16">
+                <h2 class="font-impact text-5xl md:text-7xl text-brown-900" data-translate="servicesTitle">LO QUE PUEDO<br>HACER POR TI</h2>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-brown-900 text-white p-8 md:p-12 rounded-3xl shadow-2xl transform rotate-1 hover:rotate-0 transition-all border-4 border-brown-800">
+                    <p class="text-xl md:text-2xl text-center mb-8 font-light italic text-orange-100" data-translate="servicesSubtitle">Pero vamos a lo importante...</p>
+                    <div class="bg-white text-brown-900 rounded-xl p-8 border-4 border-orange-100 shadow-inner">
+                        <ul class="space-y-4 md:text-lg">
+                            <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-3 text-rust-600"></i><span data-translate="serv1"><strong>Vídeos UGC </strong>(demostrativos, storytelling, voz en off...)</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-3 text-rust-600"></i><span data-translate="serv2">Diferentes <strong>hooks</strong> para testear el anuncio</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-3 text-rust-600"></i><span data-translate="serv3">Varios CTA al final según estrategia</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-3 text-rust-600"></i><span data-translate="serv4"><strong>Redacción creativa</strong> y guionización</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle mt-1 mr-3 text-rust-600"></i><span data-translate="serv5"><strong>Edición completa</strong> (Cortes, efectos, subtítulos...)</span></li>
+                            
+                            <li class="flex items-start bg-orange-50 p-3 rounded-lg -ml-2 border border-orange-200"><i class="fas fa-gift mt-1 mr-3 text-rust-600"></i><span data-translate="servGift">Fotos UGC siempre de regalo</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: MEDIA KIT -->
+    <!--<section class="py-24 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-right mb-16">
+                <h2 class="font-impact text-6xl md:text-8xl text-brown-900">MEDIA KIT</h2>
+                <p class="text-xl text-brown-600 mt-2">Mi set de trabajo y herramientas</p>
+            </div>
+            <div class="relative w-full aspect-video bg-white rounded-lg overflow-hidden shadow-xl border-4 border-white group cursor-pointer sepia-[0.1]">
+                <img src="/api/placeholder/1200/600?text=Foto+de+mi+set+de+trabajo" alt="Media Kit Equipment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-brown-900 bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="bg-white text-brown-900 font-impact px-6 py-2 text-xl">VER DETALLES</span>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CONTACTO -->
+    <section id="contact" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="font-impact text-6xl md:text-8xl text-brown-900" data-translate="contactTitle">CONTACTA <span class="font-handwriting text-4xl md:text-5xl lowercase text-brown-600 align-middle ml-2">conmigo y</span></h2>
+                <h2 class="font-impact text-6xl md:text-8xl text-rust-600 mt-2" data-translate="collabTitle">¡COLABOREMOS!</h2>
+            </div>
+    
+            <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-brown-100">
+                
+                <form id="contactForm" action="https://formspree.io/f/mblvyjko" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium text-brown-800 mb-2" data-translate="formName">Tu nombre</label>
+                            <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 rounded-lg bg-orange-50 border border-orange-200 focus:border-rust-500 outline-none">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-brown-800 mb-2" data-translate="formEmail">Tu email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-orange-50 border border-orange-200 focus:border-rust-500 outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="asunto" class="block text-sm font-medium text-brown-800 mb-2" data-translate="formSubject">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required class="w-full px-4 py-3 rounded-lg bg-orange-50 border border-orange-200 focus:border-rust-500 outline-none">
+                    </div>
+                    <div>
+                        <label for="mensaje" class="block text-sm font-medium text-brown-800 mb-2" data-translate="formMsg">Tu mensaje</label>
+                        <textarea id="mensaje" rows="5" name="mensaje" required class="w-full px-4 py-3 rounded-lg bg-orange-50 border border-orange-200 focus:border-rust-500 outline-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-rust-600 hover:bg-rust-700 text-white font-impact text-xl tracking-wider py-4 rounded-lg transition-colors shadow-md transform hover:scale-[1.01]" data-translate="formSend">ENVIAR MENSAJE</button>
+                </form>
+                
+                <!-- Mensajes de éxito/error -->
+                <div id="formSuccess" class="hidden text-center py-10" aria-live="polite">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-check text-green-600 text-3xl"></i></div>
+                    <h3 class="font-impact text-3xl text-brown-900 mb-2">¡ENVIADO!</h3>
+                </div>
+                <div id="formError" class="hidden text-center py-4 bg-red-100 text-red-700 rounded-lg mt-4" aria-live="polite">Error. Inténtalo de nuevo.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brown-100 text-beige-100 py-12 border-t-4 ">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            
+            <div class="text-center md:text-left">
+                <h4 class="font-impact text-2xl tracking-wide">CRISTINA YULES</h4>
+                <p class="text-sm text-brown-300 mt-1">Creadora de Contenido & UGC</p>
+            </div>
+    
+            <div class="flex space-x-6">
+                <a href="https://www.instagram.com/cristiugc/" class="text-beige-100 hover:text-rust-400 transition-colors text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@cristiyules" class="text-beige-100 hover:text-rust-400 transition-colors text-2xl"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.linkedin.com/in/cristina-yules-núñez-686548203/" class="text-beige-100 hover:text-rust-400 transition-colors text-2xl"><i class="fab fa-linkedin"></i></a>
+            </div>
+    
+            <div class="text-center md:text-right text-sm text-brown-400">
+                <p>&copy; 2025 Cristina Yules.</p>
+                <p>Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // 1. TRADUCCIONES
+        const translations = {
+            'es': {
+                'role': 'Creadora de Contenido UGC',
+                'navWhy': '¿POR QUÉ YO?',
+                'navVideos': 'VÍDEOS',
+                'navReviews': 'OPINIONES',
+                'navContact': 'CONTACTO',
+                'whyTitle': '¿POR QUÉ YO?',
+                'bio1': 'Soy graduada en <span class="font-bold bg-white px-1 text-rust-600">publicidad y relaciones públicas</span>, y amo la comunicación.',
+                'bio2': 'Hace tiempo que perdí la vergüenza, y mi mayor hobby es <span class="font-bold bg-white px-1 text-rust-600">grabarlo TODO</span>.',
+                'bio3': 'Como creadora UGC soy ',
+                'bio3strong': 'espontánea y natural',
+                'bio3end': ', pero también una comunicadora estratégica.',
+                'bioCall': '¿Te animas a comprobarlo?',
+                'brandsTitle': 'MARCAS QUE CONFÍAN EN MÍ',
+                'reviewsTitle': 'OPINIONES',
+                'videosTitle': 'MIS VÍDEOS',
+                'catStreet': 'EN LA CALLE',
+                'catTravel': 'VIAJES',
+                'catFood': 'ALIMENTACIÓN',
+                'catSports': 'DEPORTES',
+                'catEntertainment': 'ENTRETENIMIENTO',
+                'servicesTitle': 'LO QUE PUEDO<br>HACER POR TI',
+                'servicesSubtitle': 'Pero vamos a lo importante...',
+                'serv1': '<strong>Vídeos UGC </strong>(demostrativos, storytelling...)',
+                'serv2': 'Diferentes <strong>hooks</strong> para anuncios',
+                'serv3': 'Varios CTA según estrategia',
+                'serv4': '<strong>Redacción creativa</strong> y guionización',
+                'serv5': '<strong>Edición completa</strong>',
+                'servGift': 'Fotos UGC siempre de regalo',
+                'contactTitle': 'CONTACTA <span class="font-handwriting text-4xl md:text-5xl lowercase text-brown-600 align-middle ml-2">conmigo</span>',
+                'collabTitle': '¡COLABOREMOS!',
+                'formName': 'Tu nombre',
+                'formEmail': 'Tu email',
+                'formSubject': 'Asunto',
+                'formMsg': 'Tu mensaje',
+                'formSend': 'ENVIAR MENSAJE',
+                'settings': 'CONFIGURACIÓN',
+                'language': 'IDIOMA',
+                'accessibility': 'ACCESIBILIDAD',
+                'highContrast': 'Alto Contraste',
+                'textSize': 'Texto Grande'
+            },
+            'en': {
+                'role': 'UGC Content Creator',
+                'navWhy': 'WHY ME?',
+                'navVideos': 'VIDEOS',
+                'navReviews': 'REVIEWS',
+                'navContact': 'CONTACT',
+                'whyTitle': 'WHY ME?',
+                'bio1': 'I have a degree in <span class="font-bold bg-white px-1 text-rust-600">advertising & PR</span>, and I love communication.',
+                'bio2': 'I lost my shyness long ago, and my biggest hobby is <span class="font-bold bg-white px-1 text-rust-600">filming EVERYTHING</span>.',
+                'bio3': 'As a UGC creator I am ',
+                'bio3strong': 'spontaneous & natural',
+                'bio3end': ', but also a strategic communicator.',
+                'bioCall': 'Dare to check it out?',
+                'brandsTitle': 'BRANDS THAT TRUST ME',
+                'reviewsTitle': 'BRAND REVIEWS',
+                'videosTitle': 'MY VIDEOS',
+                'catStreet': 'ON THE STREET',
+                'catTravel': 'TRAVEL',
+                'catFood': 'FOOD',
+                'catSports': 'SPORTS',
+                'catEntertainment': 'ENTERTAINMENT',
+                'servicesTitle': 'WHAT I CAN<br>DO FOR YOU',
+                'servicesSubtitle': 'Let\'s get to the point...',
+                'serv1': '<strong>UGC Videos </strong>(demo, storytelling...)',
+                'serv2': 'Different <strong>hooks</strong> for ads',
+                'serv3': 'Various CTAs per strategy',
+                'serv4': '<strong>Creative writing</strong> & scripting',
+                'serv5': '<strong>Full editing</strong>',
+                'servGift': 'Free UGC photos included',
+                'contactTitle': 'CONTACT <span class="font-handwriting text-4xl md:text-5xl lowercase text-brown-600 align-middle ml-2">me</span>',
+                'collabTitle': 'LET\'S COLLAB!',
+                'formName': 'Your Name',
+                'formEmail': 'Your Email',
+                'formSubject': 'Subject',
+                'formMsg': 'Your Message',
+                'formSend': 'SEND MESSAGE',
+                'settings': 'SETTINGS',
+                'language': 'LANGUAGE',
+                'accessibility': 'ACCESSIBILITY',
+                'highContrast': 'High Contrast',
+                'textSize': 'Large Text'
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key]; 
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        function toggleContrast() { document.body.classList.toggle('high-contrast'); }
+        function toggleTextSize() { document.body.classList.toggle('text-large'); }
+
+        // FORMULARIO
+        var form = document.getElementById("contactForm");
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var successMsg = document.getElementById("formSuccess");
+            var errorMsg = document.getElementById("formError");
+            var data = new FormData(event.target);
+            fetch(event.target.action, { method: form.method, body: data, headers: { 'Accept': 'application/json' } })
+            .then(response => { if (response.ok) { form.classList.add('hidden'); successMsg.classList.remove('hidden'); form.reset(); } else { errorMsg.classList.remove('hidden'); } })
+            .catch(error => { errorMsg.classList.remove('hidden'); });
+        }
+        form.addEventListener("submit", handleSubmit);
+
+        // CARRUSEL
+        let currentReviewSlide = 0;
+        const reviewsTrack = document.getElementById('reviewsTrack');
+        function goToReviewSlide(index) {
+            currentReviewSlide = index;
+            const offset = currentReviewSlide * -100;
+            reviewsTrack.style.transform = `translateX(${offset}%)`;
+        }
+        setInterval(() => { goToReviewSlide((currentReviewSlide + 1) % 2); }, 5000);
+
+        // LAZY LOADING VÍDEOS + PORTADAS
+        document.addEventListener("DOMContentLoaded", function() {
+            var lazyVideos = [].slice.call(document.querySelectorAll("video"));
+            if ("IntersectionObserver" in window) {
+                var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(video) {
+                        if (video.isIntersecting) {
+                            video.target.preload = "metadata";
+                            lazyVideoObserver.unobserve(video.target);
+                        }
+                    });
+                });
+                lazyVideos.forEach(function(lazyVideo) { lazyVideoObserver.observe(lazyVideo); });
+            } else {
+                lazyVideos.forEach(function(video) { video.preload = "metadata"; });
+            }
+        });
+    </script>
+</body>
+</html>
