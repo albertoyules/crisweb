@@ -1,1 +1,7 @@
 .DS_Store
+node_modules/
+input.css
+tailwind.config.js
+package.json
+package-lock.json
+FOTOS/*_original.jpg
