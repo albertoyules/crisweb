@@ -120,6 +120,14 @@
             .slide img { max-height: 40px; }
             .slider { height: 70px; }
         }
+
+        /* ===== ACCESSIBILITY ===== */
+        body.high-contrast { background: #000 !important; color: #ff0 !important; }
+        body.high-contrast * { background-color: inherit; color: inherit; border-color: #ff0 !important; }
+        body.high-contrast img, body.high-contrast video { filter: contrast(1.5); }
+        body.text-large { font-size: 1.25rem !important; }
+        body.text-large h1, body.text-large h2, body.text-large h3 { font-size: 2.5rem !important; }
+        body.text-large p, body.text-large span, body.text-large label { font-size: 1.25rem !important; }
     </style>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKP2823973"></script>
