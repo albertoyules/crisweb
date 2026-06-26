@@ -2,7 +2,7 @@
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1280">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="uLi5lasYwN8YKbzZ03EybZqFBm4jWc1R9jALFFpEb6o" />
 
     <title>Cristina Yules | Creadora de Contenido UGC & Estrategia Digital</title>
@@ -127,6 +127,15 @@
         /* ===== MISC ===== */
         video { background-color: #e8e4dc; }
         .premium-line { width: 80px; height: 3px; background: linear-gradient(90deg,#A0522D,#8B4513); }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .video-card { width: 140px; margin-right: 16px; }
+            .review-card { width: 300px; margin-right: 20px; }
+            .slide { width: 140px; height: 70px; padding: 0 10px; }
+            .slide img { max-height: 40px; }
+            .slider { height: 70px; }
+        }
     </style>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKP2823973"></script>
@@ -138,12 +147,12 @@
     </script>
 </head>
 
-<body class="font-body text-brown-800 bg-beige-custom transition-all duration-300 min-w-[1280px]">
+<body class="font-body text-brown-800 bg-beige-custom transition-all duration-300">
 
     <!-- VIDEO MODAL -->
     <div id="videoModal" class="video-modal fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center" onclick="closeVideoModal(event)">
-        <div class="relative h-[85vh] aspect-[9/16]" onclick="event.stopPropagation()">
-            <button onclick="closeVideoModal(event)" class="absolute -right-16 top-0 w-12 h-12 flex items-center justify-center text-white/60 hover:text-white text-4xl transition-colors rounded-full hover:bg-white/10" aria-label="Cerrar vídeo">&times;</button>
+        <div class="relative h-[80vh] md:h-[85vh] aspect-[9/16] mx-4" onclick="event.stopPropagation()">
+            <button onclick="closeVideoModal(event)" class="absolute -top-12 right-0 md:-right-16 md:top-0 w-12 h-12 flex items-center justify-center text-white/60 hover:text-white text-4xl transition-colors rounded-full hover:bg-white/10" aria-label="Cerrar vídeo">&times;</button>
             <video id="modalVideo" class="w-full h-full object-contain rounded-2xl shadow-2xl" controls playsinline></video>
             <p id="modalBrand" class="text-center text-white/70 font-impact text-lg mt-4 tracking-widest"></p>
         </div>
@@ -176,9 +185,9 @@
     </div>
 
     <!-- ============ HERO ============ -->
-    <section class="bg-white flex flex-col justify-center items-center relative py-12 md:py-20">
-        <div class="container mx-auto px-16 lg:px-32 max-w-7xl">
-            <nav class="flex flex-wrap justify-center gap-6 md:gap-10 mb-10 text-sm md:text-base font-impact tracking-wide text-brown-800" aria-label="Menú principal">
+    <section class="bg-white flex flex-col justify-center items-center relative py-8 md:py-20">
+        <div class="container mx-auto px-6 md:px-16 lg:px-32 max-w-7xl">
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-10 mb-8 md:mb-10 text-xs md:text-base font-impact tracking-wide text-brown-800" aria-label="Menú principal">
                 <a href="#about" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navWhy">¿POR QUÉ YO?</a>
                 <a href="#portfolio" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navVideos">VÍDEOS</a>
                 <a href="#reviews" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navReviews">RESEÑAS</a>
@@ -186,10 +195,10 @@
             </nav>
             <div class="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-16">
                 <div class="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left z-10 reveal">
-                    <p class="text-xs md:text-sm tracking-widest uppercase text-rust-600 font-bold font-body mb-4 whitespace-nowrap reveal reveal-delay-1">
+                    <p class="text-[10px] md:text-sm tracking-widest uppercase text-rust-600 font-bold font-body mb-4 reveal reveal-delay-1">
                         CONTENIDO UGC - ESTRATEGIA CREATIVA - EVENTOS
                     </p>
-                    <h1 class="font-body text-3xl md:text-4xl lg:text-5xl text-brown-900 font-medium leading-tight mb-6 reveal reveal-delay-2">
+                    <h1 class="font-body text-2xl md:text-4xl lg:text-5xl text-brown-900 font-medium leading-tight mb-6 reveal reveal-delay-2">
                         Hay marcas que aparecen.<br>
                         Y hay marcas que <span class="font-bold text-rust-600 uppercase">conectan</span>.<br>
                         <span class="block mt-4 text-xl md:text-2xl text-brown-800">Juntos podemos marcar esa diferencia.</span>
@@ -206,8 +215,8 @@
                         </a>
                     </div>
                 </div>
-                <div class="w-full md:w-1/2 relative flex justify-center items-center mt-10 md:mt-0 reveal reveal-delay-2">
-                    <div class="relative w-full max-w-md aspect-[4/5] flex items-center justify-center">
+                <div class="w-full md:w-1/2 relative flex justify-center items-center mt-6 md:mt-0 reveal reveal-delay-2">
+                    <div class="relative w-full max-w-xs md:max-w-md aspect-[4/5] flex items-center justify-center">
                         <div class="absolute left-0 top-0 w-2/3 aspect-[3/4] bg-brown-100 overflow-hidden shadow-xl transform rotate-[-6deg] hover:rotate-0 transition-transform duration-500 border-4 border-white z-10">
                             <img src="/FOTOS/1ipad.jpg" alt="Cristina Yules creando contenido con iPad" class="w-full h-full object-cover" loading="eager" fetchpriority="high">
                             <div class="absolute bottom-4 left-4 bg-white/95 px-3 py-1 font-impact text-sm text-brown-900">Málaga</div>
@@ -223,13 +232,13 @@
     </section>
 
     <!-- ============ ABOUT ============ -->
-    <section id="about" class="py-10 bg-beige-dark relative">
+    <section id="about" class="py-8 md:py-10 bg-beige-dark relative">
         <div class="container mx-auto px-6 md:px-12">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="w-full md:w-1/4 relative reveal">
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                <div class="w-2/3 md:w-1/4 relative reveal mx-auto md:mx-0">
                     <img src="/FOTOS/3sentada_presentacion.jpg" alt="Cristina Yules presentación" loading="lazy" width="300" height="400" class="w-full h-auto relative z-10 shadow-lg border-4 border-white">
                 </div>
-                <div class="w-full md:w-1/2 text-lg leading-relaxed text-brown-900 font-medium reveal reveal-delay-1">
+                <div class="w-full md:w-1/2 text-base md:text-lg leading-relaxed text-brown-900 font-medium reveal reveal-delay-1">
                     <p class="mb-6" data-translate="bio1">
                         Soy Cris, graduada en <span class="font-bold bg-white px-1 text-rust-600">publicidad y relaciones públicas</span>, y amo la comunicación.
                     </p>
@@ -249,7 +258,7 @@
     <!-- ============ BRANDS + STATS ============ -->
     <section class="py-16 bg-white overflow-hidden" aria-label="Marcas colaboradoras">
         <div class="container mx-auto px-6 mb-8 text-center reveal">
-            <h3 class="font-impact text-5xl text-brown-900" data-translate="brandsTitle">MARCAS QUE HAN CONFIADO EN MÍ</h3>
+            <h3 class="font-impact text-3xl md:text-5xl text-brown-900" data-translate="brandsTitle">MARCAS QUE HAN CONFIADO EN MÍ</h3>
             <div class="premium-line mx-auto mt-4"></div>
         </div>
         <div class="slider mb-16">
@@ -283,25 +292,25 @@
         </div>
         <!-- STATS -->
         <div class="container mx-auto px-6 max-w-4xl reveal" id="statsSection">
-            <div class="grid grid-cols-3 gap-8 text-center">
+            <div class="grid grid-cols-3 gap-4 md:gap-8 text-center">
                 <div class="stat-item py-8">
                     <div class="flex items-baseline justify-center">
-                        <span class="font-impact text-4xl text-rust-600 ml-1">+</span>
-                        <span class="font-impact text-7xl text-rust-600 counter" data-target="150">0</span>
+                        <span class="font-impact text-2xl md:text-4xl text-rust-600 ml-1">+</span>
+                        <span class="font-impact text-4xl md:text-7xl text-rust-600 counter" data-target="150">0</span>
                     </div>
                     <p class="font-body text-brown-800 mt-3 text-lg font-semibold tracking-wide" data-translate="statBrands">Marcas</p>
                 </div>
                 <div class="stat-item py-8 border-x-2 border-beige-dark">
                     <div class="flex items-baseline justify-center">
-                        <span class="font-impact text-4xl text-rust-600 ml-1">+</span>
-                        <span class="font-impact text-7xl text-rust-600 counter" data-target="200">0</span>
+                        <span class="font-impact text-2xl md:text-4xl text-rust-600 ml-1">+</span>
+                        <span class="font-impact text-4xl md:text-7xl text-rust-600 counter" data-target="200">0</span>
                     </div>
                     <p class="font-body text-brown-800 mt-3 text-lg font-semibold tracking-wide" data-translate="statVideos">Vídeos entregados</p>
                 </div>
                 <div class="stat-item py-8">
                     <div class="flex items-baseline justify-center">
-                        <span class="font-impact text-4xl text-rust-600 ml-1">+</span>
-                        <span class="font-impact text-7xl text-rust-600 counter" data-target="2">0</span>
+                        <span class="font-impact text-2xl md:text-4xl text-rust-600 ml-1">+</span>
+                        <span class="font-impact text-4xl md:text-7xl text-rust-600 counter" data-target="2">0</span>
                     </div>
                     <p class="font-body text-brown-800 mt-3 text-lg font-semibold tracking-wide" data-translate="statViews">Años creando contenido</p>
                 </div>
@@ -310,20 +319,20 @@
     </section>
 
     <!-- ============ PORTFOLIO ============ -->
-    <section id="portfolio" class="py-24 bg-beige-custom relative overflow-hidden">
+    <section id="portfolio" class="py-12 md:py-24 bg-beige-custom relative overflow-hidden">
         <div class="container mx-auto px-4 md:px-8">
             <div class="text-center mb-20 relative reveal">
-                <h2 class="font-impact text-[8rem] md:text-[12rem] text-beige-dark opacity-40 leading-none select-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-0">PORTFOLIO</h2>
-                <h2 class="font-impact text-6xl md:text-8xl text-brown-900 relative z-10" data-translate="videosTitle">MIS VÍDEOS</h2>
+                <h2 class="font-impact text-[5rem] md:text-[12rem] text-beige-dark opacity-40 leading-none select-none absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-0">PORTFOLIO</h2>
+                <h2 class="font-impact text-4xl md:text-8xl text-brown-900 relative z-10" data-translate="videosTitle">MIS VÍDEOS</h2>
                 <div class="w-32 h-2 bg-rust-500 mx-auto mt-4 relative z-10"></div>
             </div>
 
             <!-- CAROUSEL 1: En la calle + Viajes -->
             <div class="mb-20 reveal" data-video-section>
                 <div class="flex items-center mb-10">
-                    <h3 class="font-impact text-3xl text-brown-800 bg-orange-100 px-5 py-2 transform -rotate-1" data-translate="catStreet">EN LA CALLE</h3>
+                    <h3 class="font-impact text-lg md:text-3xl text-brown-800 bg-orange-100 px-3 md:px-5 py-1 md:py-2 transform -rotate-1" data-translate="catStreet">EN LA CALLE</h3>
                     <div class="h-[2px] bg-orange-200 flex-grow mx-4"></div>
-                    <h3 class="font-impact text-3xl text-brown-800 bg-orange-100 px-5 py-2 transform rotate-1" data-translate="catTravel">VIAJES</h3>
+                    <h3 class="font-impact text-lg md:text-3xl text-brown-800 bg-orange-100 px-3 md:px-5 py-1 md:py-2 transform rotate-1" data-translate="catTravel">VIAJES</h3>
                 </div>
                 <div class="video-carousel">
                     <div class="video-track video-track-left">
@@ -331,7 +340,7 @@
                         <div class="video-card" onclick="openVideoModal('/VIDEOS/EN LA CALLE/bolt.mp4','BOLT')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/EN LA CALLE/bolt.mp4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">BOLT</p></div>
                         <div class="video-card" onclick="openVideoModal('/VIDEOS/EN LA CALLE/thefruitcompany.mp4','THE FRUIT COMPANY')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/EN LA CALLE/thefruitcompany.mp4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">THE FRUIT COMPANY</p></div>
                         <div class="video-card" onclick="openVideoModal('/VIDEOS/EN LA CALLE/binomial.mp4','BINOMIAL')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/EN LA CALLE/binomial.mp4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">BINOMIAL</p></div>
-                        <div class="video-card" onclick="openVideoModal('/VIDEOS/EN LA CALLE/petroni.MP4','PETRONI')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/EN LA CALLE/petroni.MP4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">PETRONI</p></div>
+                        <div class="video-card" onclick="openVideoModal('/VIDEOS/EN LA CALLE/petroni.mp4','PETRONI')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/EN LA CALLE/petroni.mp4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">PETRONI</p></div>
                         <div class="video-card" onclick="openVideoModal('/VIDEOS/EN LA CALLE/BRO.mp4','BRO')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/EN LA CALLE/BRO.mp4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">BRO</p></div>
                         <div class="video-card" onclick="openVideoModal('/VIDEOS/VIAJES/airalo.mp4','AIRALO')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/VIAJES/airalo.mp4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">AIRALO</p></div>
                         <div class="video-card" onclick="openVideoModal('/VIDEOS/VIAJES/flightright.mp4','FLIGHTRIGHT')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/VIAJES/flightright.mp4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">FLIGHTRIGHT</p></div>
@@ -344,7 +353,7 @@
                         <div class="video-card" onclick="openVideoModal('/VIDEOS/EN LA CALLE/bolt.mp4','BOLT')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/EN LA CALLE/bolt.mp4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">BOLT</p></div>
                         <div class="video-card" onclick="openVideoModal('/VIDEOS/EN LA CALLE/thefruitcompany.mp4','THE FRUIT COMPANY')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/EN LA CALLE/thefruitcompany.mp4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">THE FRUIT COMPANY</p></div>
                         <div class="video-card" onclick="openVideoModal('/VIDEOS/EN LA CALLE/binomial.mp4','BINOMIAL')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/EN LA CALLE/binomial.mp4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">BINOMIAL</p></div>
-                        <div class="video-card" onclick="openVideoModal('/VIDEOS/EN LA CALLE/petroni.MP4','PETRONI')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/EN LA CALLE/petroni.MP4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">PETRONI</p></div>
+                        <div class="video-card" onclick="openVideoModal('/VIDEOS/EN LA CALLE/petroni.mp4','PETRONI')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/EN LA CALLE/petroni.mp4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">PETRONI</p></div>
                         <div class="video-card" onclick="openVideoModal('/VIDEOS/EN LA CALLE/BRO.mp4','BRO')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/EN LA CALLE/BRO.mp4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">BRO</p></div>
                         <div class="video-card" onclick="openVideoModal('/VIDEOS/VIAJES/airalo.mp4','AIRALO')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/VIAJES/airalo.mp4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">AIRALO</p></div>
                         <div class="video-card" onclick="openVideoModal('/VIDEOS/VIAJES/flightright.mp4','FLIGHTRIGHT')"><div class="aspect-[9/16] bg-beige-dark rounded-2xl overflow-hidden shadow-lg relative"><video data-src="/VIDEOS/VIAJES/flightright.mp4#t=0.1" muted playsinline preload="none" class="w-full h-full object-cover pointer-events-none"></video><div class="play-icon"><i class="fas fa-play"></i></div></div><p class="text-center font-impact text-brown-800 mt-3 text-sm tracking-wider">FLIGHTRIGHT</p></div>
@@ -359,9 +368,9 @@
             <!-- CAROUSEL 2: Alimentación + Deportes -->
             <div class="mb-20 reveal" data-video-section>
                 <div class="flex items-center mb-10">
-                    <h3 class="font-impact text-3xl text-brown-800 bg-orange-100 px-5 py-2 transform rotate-1" data-translate="catFood">ALIMENTACIÓN</h3>
+                    <h3 class="font-impact text-lg md:text-3xl text-brown-800 bg-orange-100 px-3 md:px-5 py-1 md:py-2 transform rotate-1" data-translate="catFood">ALIMENTACIÓN</h3>
                     <div class="h-[2px] bg-orange-200 flex-grow mx-4"></div>
-                    <h3 class="font-impact text-3xl text-brown-800 bg-orange-100 px-5 py-2 transform -rotate-1" data-translate="catSports">DEPORTES</h3>
+                    <h3 class="font-impact text-lg md:text-3xl text-brown-800 bg-orange-100 px-3 md:px-5 py-1 md:py-2 transform -rotate-1" data-translate="catSports">DEPORTES</h3>
                 </div>
                 <div class="video-carousel">
                     <div class="video-track video-track-right">
@@ -411,58 +420,58 @@
     </section>
 
     <!-- ============ REVIEWS ============ -->
-    <section id="reviews" class="py-24 bg-white relative overflow-hidden">
+    <section id="reviews" class="py-12 md:py-24 bg-white relative overflow-hidden">
         <div class="container mx-auto px-6 md:px-12 mb-12 reveal">
             <div class="text-center">
-                <h2 class="font-impact text-5xl md:text-7xl text-brown-900" data-translate="reviewsTitle">LO QUE DICEN LAS MARCAS</h2>
+                <h2 class="font-impact text-3xl md:text-7xl text-brown-900" data-translate="reviewsTitle">LO QUE DICEN LAS MARCAS</h2>
                 <div class="premium-line mx-auto mt-4"></div>
             </div>
         </div>
         <div class="reviews-carousel reveal">
             <div class="reviews-track">
                 <!-- 7 reviews + 7 duplicates -->
-                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Cristina captó perfectamente la esencia urbana que buscábamos. El contenido generó un engagement muy por encima de nuestras expectativas."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Bolt_logo.png" alt="Bolt" class="h-8 w-auto object-contain opacity-70"><span class="font-impact text-brown-800 text-sm tracking-wider">BOLT</span></div></div></div>
-                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Profesional, creativa y con una capacidad increíble para transmitir experiencias de viaje de forma auténtica. Repetiremos seguro."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/civitatis.png" alt="Civitatis" class="h-8 w-auto object-contain opacity-70"><span class="font-impact text-brown-800 text-sm tracking-wider">CIVITATIS</span></div></div></div>
-                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"El vídeo tuvo un rendimiento brutal en TikTok. Sabe conectar con la audiencia de una forma muy natural y cercana."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Dunkin'_logo.png" alt="Dunkin'" class="h-8 w-auto object-contain opacity-70"><span class="font-impact text-brown-800 text-sm tracking-wider">DUNKIN'</span></div></div></div>
-                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Su energía y naturalidad delante de cámara son únicas. El contenido deportivo que creó fue exactamente lo que necesitábamos."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/fitplanet.png" alt="FitPlanet" class="h-8 w-auto object-contain opacity-70"><span class="font-impact text-brown-800 text-sm tracking-wider">FITPLANET</span></div></div></div>
-                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Contenido de viajes genuino que funcionó de maravilla en nuestras campañas de paid media. Gran profesional."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Airalo_logo.svg.png" alt="Airalo" class="h-8 w-auto object-contain opacity-70"><span class="font-impact text-brown-800 text-sm tracking-wider">AIRALO</span></div></div></div>
-                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Fresco, divertido y con una edición impecable. Entendió nuestra marca desde el primer briefing."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Logo_Klayful_sin_fondo_0d88fd18-2bde-4428-a983-d69d6b102396.png.webp" alt="Klayful" class="h-8 w-auto object-contain opacity-70"><span class="font-impact text-brown-800 text-sm tracking-wider">KLAYFUL</span></div></div></div>
-                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Su versatilidad nos sorprendió. Del lifestyle al deportivo sin perder ni un ápice de calidad y autenticidad."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/showroom.png" alt="Showroomprivé" class="h-8 w-auto object-contain opacity-70"><span class="font-impact text-brown-800 text-sm tracking-wider">SHOWROOMPRIVÉ</span></div></div></div>
+                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Cristina captó perfectamente la esencia urbana que buscábamos. El contenido generó un engagement muy por encima de nuestras expectativas."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Bolt_logo.png" alt="Bolt" class="h-8 w-auto object-contain opacity-70"></div></div></div>
+                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Profesional, creativa y con una capacidad increíble para transmitir experiencias de viaje de forma auténtica. Repetiremos seguro."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/civitatis.png" alt="Civitatis" class="h-8 w-auto object-contain opacity-70"></div></div></div>
+                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"El vídeo tuvo un rendimiento brutal en TikTok. Sabe conectar con la audiencia de una forma muy natural y cercana."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Dunkin'_logo.png" alt="Dunkin'" class="h-8 w-auto object-contain opacity-70"></div></div></div>
+                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Su energía y naturalidad delante de cámara son únicas. El contenido deportivo que creó fue exactamente lo que necesitábamos."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/fitplanet.png" alt="FitPlanet" class="h-8 w-auto object-contain opacity-70"></div></div></div>
+                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Contenido de viajes genuino que funcionó de maravilla en nuestras campañas de paid media. Gran profesional."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Airalo_logo.svg.png" alt="Airalo" class="h-8 w-auto object-contain opacity-70"></div></div></div>
+                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Fresco, divertido y con una edición impecable. Entendió nuestra marca desde el primer briefing."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Logo_Klayful_sin_fondo_0d88fd18-2bde-4428-a983-d69d6b102396.png.webp" alt="Klayful" class="h-8 w-auto object-contain opacity-70"></div></div></div>
+                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Su versatilidad nos sorprendió. Del lifestyle al deportivo sin perder ni un ápice de calidad y autenticidad."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/showroom.png" alt="Showroomprivé" class="h-8 w-auto object-contain opacity-70"></div></div></div>
                 <!-- Duplicate set -->
-                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Cristina captó perfectamente la esencia urbana que buscábamos. El contenido generó un engagement muy por encima de nuestras expectativas."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Bolt_logo.png" alt="Bolt" class="h-8 w-auto object-contain opacity-70"><span class="font-impact text-brown-800 text-sm tracking-wider">BOLT</span></div></div></div>
-                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Profesional, creativa y con una capacidad increíble para transmitir experiencias de viaje de forma auténtica. Repetiremos seguro."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/civitatis.png" alt="Civitatis" class="h-8 w-auto object-contain opacity-70"><span class="font-impact text-brown-800 text-sm tracking-wider">CIVITATIS</span></div></div></div>
-                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"El vídeo tuvo un rendimiento brutal en TikTok. Sabe conectar con la audiencia de una forma muy natural y cercana."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Dunkin'_logo.png" alt="Dunkin'" class="h-8 w-auto object-contain opacity-70"><span class="font-impact text-brown-800 text-sm tracking-wider">DUNKIN'</span></div></div></div>
-                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Su energía y naturalidad delante de cámara son únicas. El contenido deportivo que creó fue exactamente lo que necesitábamos."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/fitplanet.png" alt="FitPlanet" class="h-8 w-auto object-contain opacity-70"><span class="font-impact text-brown-800 text-sm tracking-wider">FITPLANET</span></div></div></div>
-                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Contenido de viajes genuino que funcionó de maravilla en nuestras campañas de paid media. Gran profesional."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Airalo_logo.svg.png" alt="Airalo" class="h-8 w-auto object-contain opacity-70"><span class="font-impact text-brown-800 text-sm tracking-wider">AIRALO</span></div></div></div>
-                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Fresco, divertido y con una edición impecable. Entendió nuestra marca desde el primer briefing."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Logo_Klayful_sin_fondo_0d88fd18-2bde-4428-a983-d69d6b102396.png.webp" alt="Klayful" class="h-8 w-auto object-contain opacity-70"><span class="font-impact text-brown-800 text-sm tracking-wider">KLAYFUL</span></div></div></div>
-                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Su versatilidad nos sorprendió. Del lifestyle al deportivo sin perder ni un ápice de calidad y autenticidad."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/showroom.png" alt="Showroomprivé" class="h-8 w-auto object-contain opacity-70"><span class="font-impact text-brown-800 text-sm tracking-wider">SHOWROOMPRIVÉ</span></div></div></div>
+                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Cristina captó perfectamente la esencia urbana que buscábamos. El contenido generó un engagement muy por encima de nuestras expectativas."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Bolt_logo.png" alt="Bolt" class="h-8 w-auto object-contain opacity-70"></div></div></div>
+                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Profesional, creativa y con una capacidad increíble para transmitir experiencias de viaje de forma auténtica. Repetiremos seguro."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/civitatis.png" alt="Civitatis" class="h-8 w-auto object-contain opacity-70"></div></div></div>
+                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"El vídeo tuvo un rendimiento brutal en TikTok. Sabe conectar con la audiencia de una forma muy natural y cercana."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Dunkin'_logo.png" alt="Dunkin'" class="h-8 w-auto object-contain opacity-70"></div></div></div>
+                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Su energía y naturalidad delante de cámara son únicas. El contenido deportivo que creó fue exactamente lo que necesitábamos."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/fitplanet.png" alt="FitPlanet" class="h-8 w-auto object-contain opacity-70"></div></div></div>
+                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Contenido de viajes genuino que funcionó de maravilla en nuestras campañas de paid media. Gran profesional."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Airalo_logo.svg.png" alt="Airalo" class="h-8 w-auto object-contain opacity-70"></div></div></div>
+                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Fresco, divertido y con una edición impecable. Entendió nuestra marca desde el primer briefing."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/Logo_Klayful_sin_fondo_0d88fd18-2bde-4428-a983-d69d6b102396.png.webp" alt="Klayful" class="h-8 w-auto object-contain opacity-70"></div></div></div>
+                <div class="review-card"><div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 h-full"><div class="text-rust-500 text-sm mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="text-brown-800 italic leading-relaxed mb-6">"Su versatilidad nos sorprendió. Del lifestyle al deportivo sin perder ni un ápice de calidad y autenticidad."</p><div class="border-t border-orange-100 pt-4 flex items-center gap-3"><img src="/FOTOS/showroom.png" alt="Showroomprivé" class="h-8 w-auto object-contain opacity-70"></div></div></div>
             </div>
         </div>
     </section>
 
     <!-- ============ SERVICES ============ -->
-    <section class="py-24 bg-beige-dark">
+    <section class="py-12 md:py-24 bg-beige-dark">
         <div class="container mx-auto px-6 md:px-12">
-            <div class="text-left mb-16 reveal">
-                <h2 class="font-impact text-5xl md:text-7xl text-brown-900" data-translate="servicesTitle">LO QUE PUEDO<br>HACER POR TI</h2>
+            <div class="text-left mb-10 md:mb-16 reveal">
+                <h2 class="font-impact text-3xl md:text-7xl text-brown-900" data-translate="servicesTitle">LO QUE PUEDO<br>HACER POR TI</h2>
                 <div class="premium-line mt-4"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="service-card bg-white rounded-2xl p-10 border border-brown-100 shadow-lg reveal reveal-delay-1">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+                <div class="service-card bg-white rounded-2xl p-6 md:p-10 border border-brown-100 shadow-lg reveal reveal-delay-1">
                     <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
                         <i class="fas fa-video text-rust-600 text-2xl"></i>
                     </div>
                     <h3 class="font-impact text-2xl text-brown-900 mb-4" data-translate="serv1Title">VÍDEOS UGC</h3>
                     <p class="text-brown-600 leading-relaxed" data-translate="serv1Desc">Desde el guion hasta la entrega final. Creo vídeos auténticos que conectan con tu audiencia: demos de producto, storytelling, unboxings y más. Formatos optimizados para cada plataforma.</p>
                 </div>
-                <div class="service-card bg-white rounded-2xl p-10 border border-brown-100 shadow-lg reveal reveal-delay-2">
+                <div class="service-card bg-white rounded-2xl p-6 md:p-10 border border-brown-100 shadow-lg reveal reveal-delay-2">
                     <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
                         <i class="fas fa-camera text-rust-600 text-2xl"></i>
                     </div>
                     <h3 class="font-impact text-2xl text-brown-900 mb-4" data-translate="serv2Title">EVENTOS</h3>
                     <p class="text-brown-600 leading-relaxed" data-translate="serv2Desc">Cobertura creativa en directo: entrevistas dinámicas, voz en off, vídeos resumen y contenido para redes. Todo listo para publicar con la inmediatez que necesitas.</p>
                 </div>
-                <div class="service-card bg-white rounded-2xl p-10 border border-brown-100 shadow-lg reveal reveal-delay-3">
+                <div class="service-card bg-white rounded-2xl p-6 md:p-10 border border-brown-100 shadow-lg reveal reveal-delay-3">
                     <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
                         <i class="fas fa-lightbulb text-rust-600 text-2xl"></i>
                     </div>
@@ -474,16 +483,16 @@
     </section>
 
     <!-- ============ BUDGET + CONTACT (MERGED) ============ -->
-    <section id="budget" class="py-24 bg-white relative">
+    <section id="budget" class="py-12 md:py-24 bg-white relative">
         <div class="container mx-auto px-6 md:px-12">
-            <div class="text-center mb-16 reveal">
-                <h2 class="font-impact text-5xl md:text-7xl text-brown-900" data-translate="talkTitle">¿HABLAMOS?</h2>
+            <div class="text-center mb-10 md:mb-16 reveal">
+                <h2 class="font-impact text-4xl md:text-7xl text-brown-900" data-translate="talkTitle">¿HABLAMOS?</h2>
                 <div class="premium-line mx-auto mt-4"></div>
             </div>
 
-            <div class="flex gap-12 max-w-6xl mx-auto items-start">
+            <div class="flex flex-col md:flex-row gap-8 md:gap-12 max-w-6xl mx-auto items-start">
                 <!-- LEFT: Budget -->
-                <div class="w-1/2 reveal reveal-delay-1">
+                <div class="w-full md:w-1/2 reveal reveal-delay-1">
                     <div class="bg-orange-50 p-8 md:p-10 rounded-2xl shadow-xl border border-orange-100 hover-lift">
                         <h3 class="font-impact text-3xl text-brown-900 mb-2" data-translate="budgetTitle">PRESUPUESTO RÁPIDO</h3>
                         <p class="text-brown-600 mb-6" data-translate="budgetSubtitle">Rellena este formulario con los detalles y te enviaré una propuesta a medida.</p>
@@ -570,7 +579,7 @@
                 </div>
 
                 <!-- RIGHT: Contact -->
-                <div id="contact" class="w-1/2 reveal reveal-delay-2">
+                <div id="contact" class="w-full md:w-1/2 reveal reveal-delay-2">
                     <div class="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-brown-100 hover-lift">
                         <h3 class="font-impact text-3xl text-brown-900 mb-1" data-translate="contactTitle2">CONTACTA CONMIGO</h3>
                         <p class="font-handwriting text-2xl text-rust-600 mb-8" data-translate="collabTitle">¡Colaboremos!</p>
