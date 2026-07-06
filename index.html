@@ -782,8 +782,11 @@
                     ? (totalW + newX) * dur / totalW
                     : Math.abs(newX) * dur / totalW;
                 track.style.transition = '';
-                track.style.transform = '';
+                // Set animation first (negative delay positions it at newX),
+                // then force reflow, then remove inline transform so there's no flash frame.
                 track.style.animation = animName + ' ' + dur + 's linear infinite -' + delay + 's';
+                void track.offsetHeight;
+                track.style.transform = '';
                 track._navBusy = false;
             }, 420);
         }
