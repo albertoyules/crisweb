@@ -5,3 +5,17 @@ tailwind.config.js
 package.json
 package-lock.json
 FOTOS/*_original.jpg
+
+# Backups locales
+index.html.bak
+logo.PNG
+FOTOS/LOGOS/*.PNG
+VIDEOS/**/_originales/
+CITAS ASESORIA/
+
+# Carpetas residuales
+ers/
+ktop/
+s/
+ules/
+yules/
