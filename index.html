@@ -751,12 +751,10 @@
         (function initVideoCarousels() {
             document.querySelectorAll('.video-track').forEach(function(track) {
                 var isRight = track.classList.contains('video-track-right');
-                var offset = 0;       // current scroll offset in px (always >= 0)
-                var totalW = 0;
-                var cardW = 0;
-                var pxPerMs = 0;
-                var ready = false;
-                var prevTs = null;
+                var target = 0;    // accumulates auto-scroll + button clicks
+                var display = 0;   // smoothly follows target (what's rendered)
+                var totalW = 0, cardW = 0, pxPerMs = 0;
+                var ready = false, prevTs = null;
 
                 function init() {
                     var card = track.firstElementChild;
@@ -764,7 +762,7 @@
                     cardW = card.offsetWidth + (parseInt(getComputedStyle(card).marginRight) || 0);
                     totalW = cardW * (track.children.length / 2);
                     pxPerMs = totalW / 100000; // 100 s per full set
-                    offset = isRight ? totalW : 0;
+                    target = display = isRight ? totalW : 0;
                     ready = true;
                     return true;
                 }
@@ -772,10 +770,21 @@
                 function loop(ts) {
                     if (!ready && !init()) { requestAnimationFrame(loop); return; }
                     if (prevTs !== null) {
-                        var dt = ts - prevTs;
-                        offset += (isRight ? -1 : 1) * pxPerMs * dt;
-                        offset = ((offset % totalW) + totalW) % totalW;
-                        track.style.transform = 'translateX(' + (-offset) + 'px)';
+                        var dt = Math.min(ts - prevTs, 64); // cap at ~2 frames to avoid jumps on tab switch
+                        // Advance auto-scroll target
+                        target += (isRight ? -1 : 1) * pxPerMs * dt;
+                        target = ((target % totalW) + totalW) % totalW;
+
+                        // Smooth display follows target (frame-rate independent lerp)
+                        var diff = target - display;
+                        // Take shortest path around the loop
+                        if (diff > totalW / 2)  diff -= totalW;
+                        if (diff < -totalW / 2) diff += totalW;
+                        var smooth = 1 - Math.pow(0.90, dt / 16.67); // ~10% per frame at 60fps
+                        display += diff * smooth;
+                        display = ((display % totalW) + totalW) % totalW;
+
+                        track.style.transform = 'translateX(' + (-display) + 'px)';
                     }
                     prevTs = ts;
                     requestAnimationFrame(loop);
@@ -783,11 +792,11 @@
 
                 requestAnimationFrame(loop);
 
-                // nav: dir 1 = right button (scroll left), -1 = left button (scroll right)
+                // nav: dir 1 = right button, -1 = left button
                 track._nav = function(dir) {
                     if (!ready) return;
-                    offset += dir * cardW;
-                    offset = ((offset % totalW) + totalW) % totalW;
+                    target += dir * cardW;
+                    target = ((target % totalW) + totalW) % totalW;
                 };
             });
         })();
