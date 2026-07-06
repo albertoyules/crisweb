@@ -48,8 +48,7 @@
         @keyframes scrollVLeft { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         @keyframes scrollVRight { from { transform: translateX(-50%); } to { transform: translateX(0); } }
         .video-track { display: flex; will-change: transform; }
-        .video-track-left { animation: scrollVLeft 100s linear infinite; }
-        .video-track-right { animation: scrollVRight 100s linear infinite; }
+        /* video-track-left/right direction handled by JS */
         .video-card {
             flex-shrink: 0; width: 180px; margin-right: 24px; cursor: pointer;
             transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
@@ -748,47 +747,54 @@
     <!-- ============ SCRIPTS ============ -->
     <script>
         // ===== CAROUSEL NAV =====
+        // JS-driven auto-scroll for video carousels (replaces CSS animation)
+        (function initVideoCarousels() {
+            document.querySelectorAll('.video-track').forEach(function(track) {
+                var isRight = track.classList.contains('video-track-right');
+                var offset = 0;       // current scroll offset in px (always >= 0)
+                var totalW = 0;
+                var cardW = 0;
+                var pxPerMs = 0;
+                var ready = false;
+                var prevTs = null;
+
+                function init() {
+                    var card = track.firstElementChild;
+                    if (!card || !card.offsetWidth) return false;
+                    cardW = card.offsetWidth + (parseInt(getComputedStyle(card).marginRight) || 0);
+                    totalW = cardW * (track.children.length / 2);
+                    pxPerMs = totalW / 100000; // 100 s per full set
+                    offset = isRight ? totalW : 0;
+                    ready = true;
+                    return true;
+                }
+
+                function loop(ts) {
+                    if (!ready && !init()) { requestAnimationFrame(loop); return; }
+                    if (prevTs !== null) {
+                        var dt = ts - prevTs;
+                        offset += (isRight ? -1 : 1) * pxPerMs * dt;
+                        offset = ((offset % totalW) + totalW) % totalW;
+                        track.style.transform = 'translateX(' + (-offset) + 'px)';
+                    }
+                    prevTs = ts;
+                    requestAnimationFrame(loop);
+                }
+
+                requestAnimationFrame(loop);
+
+                // nav: dir 1 = right button (scroll left), -1 = left button (scroll right)
+                track._nav = function(dir) {
+                    if (!ready) return;
+                    offset += dir * cardW;
+                    offset = ((offset % totalW) + totalW) % totalW;
+                };
+            });
+        })();
+
         function carouselNav(btn, dir) {
-            var wrapper = btn.parentElement;
-            var track = wrapper.querySelector('[class*="-track"]');
-            if (!track || track._navBusy) return;
-            track._navBusy = true;
-
-            var first = track.firstElementChild;
-            var cardW = first.offsetWidth + parseInt(getComputedStyle(first).marginRight || 0);
-            var setCount = track.children.length / 2;
-            var totalW = cardW * setCount;
-
-            var matrix = new DOMMatrix(getComputedStyle(track).transform);
-            var curX = matrix.m41;
-
-            var newX = curX - dir * cardW;
-            if (newX > 0) newX -= totalW;
-            if (newX <= -totalW) newX += totalW;
-
-            var animName = getComputedStyle(track).animationName;
-            var dur = parseFloat(getComputedStyle(track).animationDuration);
-            var isReverse = animName.indexOf('Right') !== -1;
-
-            track.style.animation = 'none';
-            track.style.transform = 'translateX(' + curX + 'px)';
-            void track.offsetHeight;
-
-            track.style.transition = 'transform 0.42s cubic-bezier(0.16,1,0.3,1)';
-            track.style.transform = 'translateX(' + newX + 'px)';
-
-            setTimeout(function() {
-                var delay = isReverse
-                    ? (totalW + newX) * dur / totalW
-                    : Math.abs(newX) * dur / totalW;
-                track.style.transition = '';
-                // Set animation first (negative delay positions it at newX),
-                // then force reflow, then remove inline transform so there's no flash frame.
-                track.style.animation = animName + ' ' + dur + 's linear infinite -' + delay + 's';
-                void track.offsetHeight;
-                track.style.transform = '';
-                track._navBusy = false;
-            }, 420);
+            var track = btn.parentElement.querySelector('[class*="-track"]');
+            if (track && track._nav) track._nav(dir);
         }
 
         // ===== TRANSLATIONS =====
