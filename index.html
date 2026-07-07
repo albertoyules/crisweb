@@ -88,8 +88,7 @@
             mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
             -webkit-mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
         }
-        .reviews-track { display: flex; animation: scrollReviews 55s linear infinite; will-change: transform; }
-        .reviews-track:hover { animation-play-state: paused; }
+        .reviews-track { display: flex; will-change: transform; }
         .review-card {
             flex-shrink: 0; width: 380px; margin-right: 32px;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -815,6 +814,49 @@
                     target = ((target % totalW) + totalW) % totalW;
                 };
             });
+        })();
+
+        // Reviews carousel — same rAF + lerp approach as video carousels
+        (function initReviewsCarousel() {
+            var track = document.querySelector('.reviews-track');
+            if (!track) return;
+            var target = 0, display = 0;
+            var totalW = 0, cardW = 0, pxPerMs = 0;
+            var ready = false, prevTs = null;
+
+            function init() {
+                var card = track.firstElementChild;
+                if (!card || !card.offsetWidth) return false;
+                cardW = card.offsetWidth + (parseInt(getComputedStyle(card).marginRight) || 0);
+                totalW = cardW * (track.children.length / 2);
+                pxPerMs = totalW / 55000; // 55 s per full set
+                ready = true;
+                return true;
+            }
+
+            function loop(ts) {
+                if (!ready && !init()) { requestAnimationFrame(loop); return; }
+                if (prevTs !== null) {
+                    var dt = Math.min(ts - prevTs, 64);
+                    target += pxPerMs * dt;
+                    target = ((target % totalW) + totalW) % totalW;
+                    var diff = target - display;
+                    if (diff > totalW / 2)  diff -= totalW;
+                    if (diff < -totalW / 2) diff += totalW;
+                    display += diff * (1 - Math.pow(0.90, dt / 16.67));
+                    display = ((display % totalW) + totalW) % totalW;
+                    track.style.transform = 'translateX(' + (-display) + 'px)';
+                }
+                prevTs = ts;
+                requestAnimationFrame(loop);
+            }
+
+            requestAnimationFrame(loop);
+            track._nav = function(dir) {
+                if (!ready) return;
+                target += dir * cardW;
+                target = ((target % totalW) + totalW) % totalW;
+            };
         })();
 
         function carouselNav(btn, dir) {
