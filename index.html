@@ -975,8 +975,11 @@
                 if (entry.isIntersecting) {
                     entry.target.querySelectorAll('video[data-src]').forEach(function(video) {
                         video.src = video.getAttribute('data-src');
-                        video.preload = 'metadata';
+                        video.muted = true;
                         video.loop = true;
+                        video.playsInline = true;
+                        video.preload = 'metadata';
+                        video.load(); // required for Safari to start loading after preload="none"
                         video.play().catch(function(){});
                         video.removeAttribute('data-src');
                     });
