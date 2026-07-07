@@ -285,8 +285,8 @@
         </div>
         <div class="slider mb-16">
             <div class="slide-track">
-                <div class="slide"><img src="/FOTOS/LOGOS/IMG_6388.webp" loading="lazy" alt="Junta de Andalucía" width="200" height="100"></div>
-                <div class="slide"><img src="/FOTOS/LOGOS/IMG_6390.webp" loading="lazy" alt="Iati Seguros" width="200" height="100"></div>
+                <div class="slide"><img src="/FOTOS/LOGOS/IMG_6388.webp" loading="lazy" alt="Junta de Andalucía" width="50" height="50"></div>
+                <div class="slide"><img src="/FOTOS/LOGOS/IMG_6390.webp" loading="lazy" alt="Iati Seguros" width="50" height="50"></div>
                 <div class="slide"><img src="/FOTOS/LOGOS/IMG_6391.webp" loading="lazy" alt="Olin" width="200" height="100"></div>
                 <div class="slide"><img src="/FOTOS/LOGOS/IMG_6392.webp" loading="lazy" alt="Waynabox" width="200" height="100"></div>
                 <div class="slide"><img src="/FOTOS/LOGOS/IMG_6393.webp" loading="lazy" alt="Soloptical" width="200" height="100"></div>
@@ -767,10 +767,10 @@
         (function initVideoCarousels() {
             document.querySelectorAll('.video-track').forEach(function(track) {
                 var isRight = track.classList.contains('video-track-right');
-                var target = 0;    // accumulates auto-scroll + button clicks
-                var display = 0;   // smoothly follows target (what's rendered)
-                var totalW = 0, cardW = 0, pxPerMs = 0;
-                var ready = false, prevTs = null;
+                var target = 0, display = 0;
+                var totalW = 0, cardW = 0, pxPerMs = 0, viewW = 0;
+                var ready = false, prevTs = null, frameCount = 0;
+                track._sectionVisible = false;
 
                 function init() {
                     var card = track.firstElementChild;
@@ -778,37 +778,55 @@
                     cardW = card.offsetWidth + (parseInt(getComputedStyle(card).marginRight) || 0);
                     totalW = cardW * (track.children.length / 2);
                     pxPerMs = totalW / 100000; // 100 s per full set
+                    viewW = (track.parentElement && track.parentElement.offsetWidth) || 400;
                     target = display = isRight ? totalW : 0;
                     ready = true;
                     return true;
                 }
 
+                // Play only cards near the visible window, pause the rest
+                function manageVideos() {
+                    var cards = track.children;
+                    for (var i = 0; i < cards.length; i++) {
+                        var video = cards[i].querySelector('video');
+                        if (!video || video.hasAttribute('data-src')) continue;
+                        var pos = i * cardW - display;
+                        var near = pos > -cardW * 2 && pos < viewW + cardW * 2;
+                        var shouldPlay = track._sectionVisible && near;
+                        if (shouldPlay && video.paused) {
+                            video.play().catch(function(){});
+                        } else if (!shouldPlay && !video.paused) {
+                            video.pause();
+                        }
+                    }
+                }
+
                 function loop(ts) {
                     if (!ready && !init()) { requestAnimationFrame(loop); return; }
                     if (prevTs !== null) {
-                        var dt = Math.min(ts - prevTs, 64); // cap at ~2 frames to avoid jumps on tab switch
-                        // Advance auto-scroll target
+                        var dt = Math.min(ts - prevTs, 64);
                         target += (isRight ? -1 : 1) * pxPerMs * dt;
                         target = ((target % totalW) + totalW) % totalW;
 
-                        // Smooth display follows target (frame-rate independent lerp)
                         var diff = target - display;
-                        // Take shortest path around the loop
                         if (diff > totalW / 2)  diff -= totalW;
                         if (diff < -totalW / 2) diff += totalW;
-                        var smooth = 1 - Math.pow(0.90, dt / 16.67); // ~10% per frame at 60fps
+                        var smooth = 1 - Math.pow(0.90, dt / 16.67);
                         display += diff * smooth;
                         display = ((display % totalW) + totalW) % totalW;
 
                         track.style.transform = 'translateX(' + (-display) + 'px)';
+
+                        // Check play/pause every ~30 frames to avoid overhead
+                        if (++frameCount % 30 === 0) manageVideos();
                     }
                     prevTs = ts;
                     requestAnimationFrame(loop);
                 }
 
                 requestAnimationFrame(loop);
+                track._manageVideos = manageVideos;
 
-                // nav: dir 1 = right button, -1 = left button
                 track._nav = function(dir) {
                     if (!ready) return;
                     target += dir * cardW;
@@ -969,24 +987,33 @@
             if (e.key === 'Escape') closeVideoModal();
         });
 
-        // ===== LAZY LOAD VIDEOS WHEN SECTION IN VIEW =====
+        // ===== LAZY LOAD + PAUSE/RESUME VIDEOS BY SECTION =====
         var videoSectionObserver = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
+                var track = entry.target.querySelector('.video-track');
                 if (entry.isIntersecting) {
+                    // Load any unloaded videos
                     entry.target.querySelectorAll('video[data-src]').forEach(function(video) {
                         video.src = video.getAttribute('data-src');
                         video.muted = true;
                         video.loop = true;
                         video.playsInline = true;
                         video.preload = 'metadata';
-                        video.load(); // required for Safari to start loading after preload="none"
-                        video.play().catch(function(){});
+                        video.load();
                         video.removeAttribute('data-src');
                     });
-                    videoSectionObserver.unobserve(entry.target);
+                    // Mark section visible so the rAF loop starts playing near-viewport cards
+                    if (track) {
+                        track._sectionVisible = true;
+                        track._manageVideos && track._manageVideos();
+                    }
+                } else {
+                    // Section left viewport — pause everything to free decoders
+                    if (track) track._sectionVisible = false;
+                    entry.target.querySelectorAll('video:not([data-src])').forEach(function(v) { v.pause(); });
                 }
             });
-        }, { rootMargin: '600px' });
+        }, { rootMargin: '300px' });
 
         document.querySelectorAll('[data-video-section]').forEach(function(section) {
             videoSectionObserver.observe(section);
