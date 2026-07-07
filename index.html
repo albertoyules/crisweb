@@ -51,8 +51,8 @@
         @keyframes scrollBrands { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         .slider { height: 100px; overflow: hidden; position: relative; width: 100%; }
         .slide-track { display: flex; animation: scrollBrands 35s linear infinite; will-change: transform; }
-        .slide { height: 100px; width: 150px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; padding: 0 8px; }
-        .slide img { max-height: 55px; max-width: 130px; width: auto; object-fit: contain; filter: grayscale(100%) sepia(50%); opacity: 0.6; transition: all 0.4s ease; }
+        .slide { height: 100px; width: auto; min-width: 80px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; padding: 0 24px; }
+        .slide img { max-height: 55px; max-width: 140px; width: auto; object-fit: contain; filter: grayscale(100%) sepia(50%); opacity: 0.6; transition: all 0.4s ease; }
         .slide img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
 
         /* ===== VIDEO CAROUSELS ===== */
@@ -146,7 +146,7 @@
         @media (max-width: 768px) {
             .video-card { width: 140px; margin-right: 16px; }
             .review-card { width: 300px; margin-right: 20px; }
-            .slide { width: 140px; height: 70px; padding: 0 10px; }
+            .slide { width: auto; min-width: 60px; height: 70px; padding: 0 16px; }
             .slide img { max-height: 40px; }
             .slider { height: 70px; }
         }
