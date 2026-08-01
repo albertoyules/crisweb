@@ -6,10 +6,20 @@ package.json
 package-lock.json
 FOTOS/*_original.jpg
 
+# Vídeo: NUNCA en el repo. Se sirve desde Cloudflare R2 (ver VIDEO_BASE en index.html).
+# Vercel cuenta cada reproducción contra el Fast Data Transfer del plan Hobby;
+# servir vídeo desde aquí agotó los 100 GB/mes en pocos días.
+VIDEOS/
+*.mp4
+*.mov
+*.webm
+*.avi
+*.m4v
+*.mkv
+
 # Backups locales
 index.html.bak
 FOTOS/LOGOS/*.PNG
-VIDEOS/**/_originales/
 CITAS ASESORIA/
 
 # Carpetas residuales
