@@ -213,6 +213,7 @@
                 <a href="#portfolio" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navVideos">VÍDEOS</a>
                 <a href="#reviews" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navReviews">RESEÑAS</a>
                 <a href="#contact" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navContact">CONTACTO</a>
+                <a href="/asesorias" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navMentoring">ASESORÍAS</a>
             </nav>
             <div class="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-16">
                 <div class="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left z-10 reveal">
@@ -680,6 +681,14 @@
                             <div id="budgetError" class="hidden text-center py-3 bg-red-100 text-red-700 rounded-lg mt-4 text-sm font-bold" aria-live="polite">Error al enviar. Inténtalo de nuevo.</div>
                         </div>
                     </div>
+
+                    <a href="/asesorias" class="mt-6 flex items-center justify-between gap-3 bg-brown-900 hover:bg-rust-600 text-white p-6 rounded-2xl shadow-xl hover-lift transition-all">
+                        <span>
+                            <span class="block font-impact text-3xl tracking-wide" data-translate="mentoringTitle">ASESORÍAS 1:1</span>
+                            <span class="block text-sm" data-translate="mentoringSubtitle">¿Empiezas en UGC? Reserva una mentoría conmigo</span>
+                        </span>
+                        <span class="font-impact text-3xl" aria-hidden="true">&rarr;</span>
+                    </a>
                 </div>
 
                 <!-- RIGHT: Contact -->
@@ -872,7 +881,8 @@
         // ===== TRANSLATIONS =====
         const translations = {
             'es': {
-                'navWhy': '¿POR QUÉ YO?', 'navVideos': 'VÍDEOS', 'navReviews': 'RESEÑAS', 'navContact': 'CONTACTO',
+                'navWhy': '¿POR QUÉ YO?', 'navVideos': 'VÍDEOS', 'navReviews': 'RESEÑAS', 'navContact': 'CONTACTO', 'navMentoring': 'ASESORÍAS',
+                'mentoringTitle': 'ASESORÍAS 1:1', 'mentoringSubtitle': '¿Empiezas en UGC? Reserva una mentoría conmigo',
                 'bio1': 'Hola hola! Por aquí una que perdió la vergüenza hace tiempo — y desde entonces no ha parado de grabar.',
                 'bio2': 'Estudié <span class="font-bold bg-white px-1 text-rust-600">publicidad y relaciones públicas</span>, y ahora creo contenido UGC que no parece promocional, que no interrumpe.',
                 'bio3': 'Un contenido que conecta porque primero lo vivo, y luego lo cuento. ', 'bio3strong': 'Espontáneo y natural', 'bio3end': ', pero con una estrategia clara detrás.',
@@ -893,7 +903,8 @@
                 'settings': 'CONFIGURACIÓN', 'language': 'IDIOMA', 'accessibility': 'ACCESIBILIDAD', 'highContrast': 'Alto Contraste', 'textSize': 'Texto Grande'
             },
             'en': {
-                'navWhy': 'WHY ME?', 'navVideos': 'VIDEOS', 'navReviews': 'REVIEWS', 'navContact': 'CONTACT',
+                'navWhy': 'WHY ME?', 'navVideos': 'VIDEOS', 'navReviews': 'REVIEWS', 'navContact': 'CONTACT', 'navMentoring': 'MENTORING',
+                'mentoringTitle': '1:1 MENTORING', 'mentoringSubtitle': 'Starting out in UGC? Book a mentoring session with me',
                 'bio1': 'Hi there! I\'m one who lost her shyness a long time ago — and hasn\'t stopped filming since.',
                 'bio2': 'I studied <span class="font-bold bg-white px-1 text-rust-600">advertising & PR</span>, and now I create UGC content that doesn\'t feel promotional, that doesn\'t interrupt.',
                 'bio3': 'Content that connects because I live it first, then tell it. ', 'bio3strong': 'Spontaneous & natural', 'bio3end': ', but with a clear strategy behind it.',
