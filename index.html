@@ -129,6 +129,33 @@
         .hover-lift { transition: transform 0.4s ease, box-shadow 0.4s ease; }
         .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
+        /* ===== MEDIA KIT · EQUIPO ===== */
+        .mk-layout { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 4rem; align-items: center; }
+        .mk-title { font-size: clamp(3.5rem, 8vw, 6.5rem); line-height: 0.9; }
+        .mk-list { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; gap: 0.4rem; }
+        .mk-list li { display: flex; gap: 0.75rem; align-items: baseline; }
+        .mk-list li::before { content: '—'; color: rgb(160 82 45); font-weight: 700; }
+        .mk-pill { background: #fff; border-radius: 9999px; padding: 0.45rem 1rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: rgb(78 52 46); }
+        .mk-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+        .mk-card { background: rgb(245 241 232); border-radius: 1rem; box-shadow: 0 10px 25px -5px rgba(62,39,35,0.12); position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; padding: 2.5rem 1rem 1.25rem; aspect-ratio: 4 / 5; }
+        .mk-num { position: absolute; top: 0.9rem; left: 1.1rem; font-family: 'Impact', 'Anton', sans-serif; font-size: 1.1rem; letter-spacing: 1px; color: rgb(160 82 45); }
+        .mk-stage { flex: 1; width: 100%; display: flex; align-items: center; justify-content: center; min-height: 0; }
+        .mk-float { max-width: 84%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 14px 16px rgba(62,39,35,0.14)); animation: mkFloat var(--dur, 6s) ease-in-out var(--delay, 0s) infinite; will-change: transform; }
+        .mk-shadow { width: 50%; height: 12px; margin-top: 0.4rem; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(62,39,35,0.3) 0%, rgba(62,39,35,0) 70%); animation: mkShadow var(--dur, 6s) ease-in-out var(--delay, 0s) infinite; }
+        .mk-name { margin-top: 0.9rem; text-align: center; font-family: 'Impact', 'Anton', sans-serif; text-transform: uppercase; letter-spacing: 1px; color: rgb(78 52 46); font-size: 1.05rem; line-height: 1.1; }
+        .mk-cat { margin-top: 0.25rem; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; color: rgb(160 82 45); }
+        @keyframes mkFloat { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-12px) rotate(var(--tilt, 1deg)); } }
+        @keyframes mkShadow { 0%, 100% { transform: scaleX(1); opacity: 0.55; } 50% { transform: scaleX(0.78); opacity: 0.28; } }
+        @media (prefers-reduced-motion: reduce) { .mk-float, .mk-shadow { animation: none; } }
+        @media (max-width: 1023px) {
+            .mk-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+        }
+        @media (max-width: 639px) {
+            .mk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
+            .mk-card { padding: 2.1rem 0.6rem 1rem; }
+            .mk-name { font-size: 0.9rem; }
+        }
+
         /* ===== VIDEO MODAL ===== */
         .video-modal { opacity: 0; pointer-events: none; transition: opacity 0.35s ease; }
         .video-modal.active { opacity: 1; pointer-events: all; }
@@ -526,6 +553,45 @@
         </div>
     </section>
 
+    <!-- ============ MEDIA KIT · EQUIPO ============ -->
+    <section id="mediakit" class="py-12 md:py-24 bg-beige-dark relative overflow-hidden">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="mk-layout">
+                <div class="reveal">
+                    <h3 class="font-impact text-lg md:text-2xl text-brown-800 bg-orange-100 px-4 py-1 transform -rotate-1 mb-4" style="display:inline-block" data-translate="mkTag">MEDIA KIT</h3>
+                    <h2 class="font-impact mk-title text-brown-900 mb-8" data-translate="mkTitle">MI <span class="text-rust-600">EQUIPO</span></h2>
+                    <div class="text-base md:text-lg leading-relaxed text-brown-900 font-medium">
+                        <p class="mb-4" data-translate="mkIntro">De todo lo que necesitas para producir buen contenido, me encargo yo:</p>
+                        <ul class="mk-list">
+                            <li data-translate="mkItem1">Buena calidad de audio.</li>
+                            <li data-translate="mkItem2">Diversidad de lentes para los detalles.</li>
+                            <li data-translate="mkItem3">Iluminación sin depender del clima.</li>
+                            <li data-translate="mkItem4">Incluso tomas de dron para elevar tu marca.</li>
+                        </ul>
+                        <p data-translate="mkOutro">Y todo esto,</p>
+                        <span class="font-handwriting text-3xl block mt-2 rotate-[-2deg] text-rust-600" data-translate="mkOutroHand">¡sin depender de nadie más!</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-8">
+                        <span class="mk-pill" data-translate="mkPillVideo">VÍDEO</span>
+                        <span class="mk-pill" data-translate="mkPillAudio">AUDIO</span>
+                        <span class="mk-pill" data-translate="mkPillLight">ILUMINACIÓN</span>
+                        <span class="mk-pill" data-translate="mkPillAerial">AÉREO</span>
+                    </div>
+                    <p class="text-sm tracking-widest font-bold text-rust-600 mt-6">@CRISTIUGC · CRISTIYULES.COM</p>
+                </div>
+
+                <div class="mk-grid reveal reveal-delay-1">
+                    <div class="mk-card hover-lift"><span class="mk-num">01</span><div class="mk-stage"><img class="mk-float" src="/FOTOS/EQUIPO/iphone-16-pro-max.webp" alt="iPhone 16 Pro Max" loading="lazy" width="323" height="404" style="--dur:6.2s;--delay:0s;--tilt:-1.2deg"></div><div class="mk-shadow" style="--dur:6.2s;--delay:0s"></div><p class="mk-name">iPhone 16 Pro Max</p><p class="mk-cat" data-translate="mkCatRec">GRABACIÓN</p></div>
+                    <div class="mk-card hover-lift"><span class="mk-num">02</span><div class="mk-stage"><img class="mk-float" src="/FOTOS/EQUIPO/dji-mic-mini.webp" alt="DJI Mic Mini" loading="lazy" width="604" height="528" style="--dur:5.4s;--delay:-1.8s;--tilt:1.5deg"></div><div class="mk-shadow" style="--dur:5.4s;--delay:-1.8s"></div><p class="mk-name">DJI Mic Mini</p><p class="mk-cat" data-translate="mkCatAudio">AUDIO</p></div>
+                    <div class="mk-card hover-lift"><span class="mk-num">03</span><div class="mk-stage"><img class="mk-float" src="/FOTOS/EQUIPO/focos-neewer.webp" alt="Focos Neewer" loading="lazy" width="575" height="628" style="--dur:7s;--delay:-3.1s;--tilt:0.6deg"></div><div class="mk-shadow" style="--dur:7s;--delay:-3.1s"></div><p class="mk-name" data-translate="mkNameLights">Focos Neewer</p><p class="mk-cat" data-translate="mkCatLight">ILUMINACIÓN</p></div>
+                    <div class="mk-card hover-lift"><span class="mk-num">04</span><div class="mk-stage"><img class="mk-float" src="/FOTOS/EQUIPO/sony-zv-e10.webp" alt="Sony ZV-E10" loading="lazy" width="447" height="422" style="--dur:5.8s;--delay:-2.4s;--tilt:-1deg"></div><div class="mk-shadow" style="--dur:5.8s;--delay:-2.4s"></div><p class="mk-name">Sony ZV-E10</p><p class="mk-cat" data-translate="mkCatCam">CÁMARA</p></div>
+                    <div class="mk-card hover-lift"><span class="mk-num">05</span><div class="mk-stage"><img class="mk-float" src="/FOTOS/EQUIPO/hollyland-lark-m2.webp" alt="Hollyland Lark M2" loading="lazy" width="215" height="235" style="--dur:6.6s;--delay:-0.9s;--tilt:1.8deg"></div><div class="mk-shadow" style="--dur:6.6s;--delay:-0.9s"></div><p class="mk-name">Hollyland Lark M2</p><p class="mk-cat" data-translate="mkCatAudio2">AUDIO</p></div>
+                    <div class="mk-card hover-lift"><span class="mk-num">06</span><div class="mk-stage"><img class="mk-float" src="/FOTOS/EQUIPO/dji-mini-3.webp" alt="Dron DJI Mini 3" loading="lazy" width="750" height="482" style="--dur:5s;--delay:-3.6s;--tilt:-1.6deg"></div><div class="mk-shadow" style="--dur:5s;--delay:-3.6s"></div><p class="mk-name">DJI Mini 3</p><p class="mk-cat" data-translate="mkCatDrone">DRON</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ============ REVIEWS ============ -->
     <section id="reviews" class="py-12 md:py-24 bg-white relative overflow-hidden">
         <div class="container mx-auto px-6 md:px-12 mb-12 reveal">
@@ -887,6 +953,10 @@
         // ===== TRANSLATIONS =====
         const translations = {
             'es': {
+                'mkTag': 'MEDIA KIT', 'mkTitle': 'MI <span class="text-rust-600">EQUIPO</span>', 'mkIntro': 'De todo lo que necesitas para producir buen contenido, me encargo yo:',
+                'mkItem1': 'Buena calidad de audio.', 'mkItem2': 'Diversidad de lentes para los detalles.', 'mkItem3': 'Iluminación sin depender del clima.', 'mkItem4': 'Incluso tomas de dron para elevar tu marca.',
+                'mkOutro': 'Y todo esto,', 'mkOutroHand': '¡sin depender de nadie más!', 'mkPillVideo': 'VÍDEO', 'mkPillAudio': 'AUDIO', 'mkPillLight': 'ILUMINACIÓN', 'mkPillAerial': 'AÉREO',
+                'mkNameLights': 'Focos Neewer', 'mkCatRec': 'GRABACIÓN', 'mkCatAudio': 'AUDIO', 'mkCatAudio2': 'AUDIO', 'mkCatLight': 'ILUMINACIÓN', 'mkCatCam': 'CÁMARA', 'mkCatDrone': 'DRON',
                 'navWhy': '¿POR QUÉ YO?', 'navVideos': 'VÍDEOS', 'navReviews': 'RESEÑAS', 'navContact': 'CONTACTO', 'navMentoring': 'ASESORÍAS',
                 'mentoringTitle': 'ASESORÍAS 1:1', 'mentoringSubtitle': '¿Empiezas en UGC? Reserva una mentoría conmigo',
                 'bio1': 'Hola hola! Por aquí una que perdió la vergüenza hace tiempo — y desde entonces no ha parado de grabar.',
@@ -909,6 +979,10 @@
                 'settings': 'CONFIGURACIÓN', 'language': 'IDIOMA', 'accessibility': 'ACCESIBILIDAD', 'highContrast': 'Alto Contraste', 'textSize': 'Texto Grande'
             },
             'en': {
+                'mkTag': 'MEDIA KIT', 'mkTitle': 'MY <span class="text-rust-600">GEAR</span>', 'mkIntro': 'Everything you need to produce great content, I take care of it:',
+                'mkItem1': 'Great audio quality.', 'mkItem2': 'A range of lenses for the details.', 'mkItem3': 'Lighting that doesn\'t depend on the weather.', 'mkItem4': 'Even drone shots to elevate your brand.',
+                'mkOutro': 'And all of this,', 'mkOutroHand': 'without relying on anyone else!', 'mkPillVideo': 'VIDEO', 'mkPillAudio': 'AUDIO', 'mkPillLight': 'LIGHTING', 'mkPillAerial': 'AERIAL',
+                'mkNameLights': 'Neewer lights', 'mkCatRec': 'RECORDING', 'mkCatAudio': 'AUDIO', 'mkCatAudio2': 'AUDIO', 'mkCatLight': 'LIGHTING', 'mkCatCam': 'CAMERA', 'mkCatDrone': 'DRONE',
                 'navWhy': 'WHY ME?', 'navVideos': 'VIDEOS', 'navReviews': 'REVIEWS', 'navContact': 'CONTACT', 'navMentoring': 'MENTORING',
                 'mentoringTitle': '1:1 MENTORING', 'mentoringSubtitle': 'Starting out in UGC? Book a mentoring session with me',
                 'bio1': 'Hi there! I\'m one who lost her shyness a long time ago — and hasn\'t stopped filming since.',
