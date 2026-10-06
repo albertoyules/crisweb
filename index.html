@@ -129,6 +129,11 @@
         .hover-lift { transition: transform 0.4s ease, box-shadow 0.4s ease; }
         .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
+        /* Menú: en móvil, dos filas de 3 */
+        @media (max-width: 639px) {
+            .main-nav { display: grid; grid-template-columns: repeat(3, auto); justify-content: center; column-gap: 1.25rem; row-gap: 0; text-align: center; }
+        }
+
         /* ===== MEDIA KIT · EQUIPO ===== */
         .mk-layout { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 4rem; align-items: center; }
         .mk-title { font-size: clamp(3.5rem, 8vw, 6.5rem); line-height: 0.9; }
@@ -146,7 +151,12 @@
         .mk-cat { margin-top: 0.25rem; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; color: rgb(160 82 45); }
         @keyframes mkFloat { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-12px) rotate(var(--tilt, 1deg)); } }
         @keyframes mkShadow { 0%, 100% { transform: scaleX(1); opacity: 0.55; } 50% { transform: scaleX(0.78); opacity: 0.28; } }
-        @media (prefers-reduced-motion: reduce) { .mk-float, .mk-shadow { animation: none; } }
+        /* Con "Reducir movimiento" activado siguen flotando, pero más suave y sin giro */
+        @keyframes mkFloatSoft { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        @media (prefers-reduced-motion: reduce) {
+            .mk-float { animation-name: mkFloatSoft; animation-duration: calc(var(--dur, 6s) * 1.4); }
+            .mk-shadow { animation-duration: calc(var(--dur, 6s) * 1.4); }
+        }
         @media (max-width: 1023px) {
             .mk-layout { grid-template-columns: 1fr; gap: 2.5rem; }
         }
@@ -235,9 +245,10 @@
     <!-- ============ HERO ============ -->
     <section class="bg-white flex flex-col justify-center items-center relative py-8 md:py-20">
         <div class="container mx-auto px-6 md:px-16 lg:px-32 max-w-7xl">
-            <nav class="flex flex-wrap justify-center gap-4 md:gap-10 mb-8 md:mb-10 text-xs md:text-base font-impact tracking-wide text-brown-800" aria-label="Menú principal">
+            <nav class="main-nav flex flex-wrap justify-center gap-4 md:gap-10 mb-8 md:mb-10 text-xs md:text-base font-impact tracking-wide text-brown-800" aria-label="Menú principal">
                 <a href="#about" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navWhy">¿POR QUÉ YO?</a>
                 <a href="#portfolio" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navVideos">VÍDEOS</a>
+                <a href="#mediakit" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navMediaKit">MEDIA KIT</a>
                 <a href="#reviews" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navReviews">RESEÑAS</a>
                 <a href="#contact" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navContact">CONTACTO</a>
                 <a href="/asesorias" class="py-2 hover:text-rust-600 border-b-2 border-transparent hover:border-rust-600 transition-all" data-translate="navMentoring">ASESORÍAS</a>
@@ -577,7 +588,6 @@
                         <span class="mk-pill" data-translate="mkPillLight">ILUMINACIÓN</span>
                         <span class="mk-pill" data-translate="mkPillAerial">AÉREO</span>
                     </div>
-                    <p class="text-sm tracking-widest font-bold text-rust-600 mt-6">@CRISTIUGC · CRISTIYULES.COM</p>
                 </div>
 
                 <div class="mk-grid reveal reveal-delay-1">
@@ -957,7 +967,7 @@
                 'mkItem1': 'Buena calidad de audio.', 'mkItem2': 'Diversidad de lentes para los detalles.', 'mkItem3': 'Iluminación sin depender del clima.', 'mkItem4': 'Incluso tomas de dron para elevar tu marca.',
                 'mkOutro': 'Y todo esto,', 'mkOutroHand': '¡sin depender de nadie más!', 'mkPillVideo': 'VÍDEO', 'mkPillAudio': 'AUDIO', 'mkPillLight': 'ILUMINACIÓN', 'mkPillAerial': 'AÉREO',
                 'mkNameLights': 'Focos Neewer', 'mkCatRec': 'GRABACIÓN', 'mkCatAudio': 'AUDIO', 'mkCatAudio2': 'AUDIO', 'mkCatLight': 'ILUMINACIÓN', 'mkCatCam': 'CÁMARA', 'mkCatDrone': 'DRON',
-                'navWhy': '¿POR QUÉ YO?', 'navVideos': 'VÍDEOS', 'navReviews': 'RESEÑAS', 'navContact': 'CONTACTO', 'navMentoring': 'ASESORÍAS',
+                'navWhy': '¿POR QUÉ YO?', 'navVideos': 'VÍDEOS', 'navReviews': 'RESEÑAS', 'navContact': 'CONTACTO', 'navMediaKit': 'MEDIA KIT', 'navMentoring': 'ASESORÍAS',
                 'mentoringTitle': 'ASESORÍAS 1:1', 'mentoringSubtitle': '¿Empiezas en UGC? Reserva una mentoría conmigo',
                 'bio1': 'Hola hola! Por aquí una que perdió la vergüenza hace tiempo — y desde entonces no ha parado de grabar.',
                 'bio2': 'Estudié <span class="font-bold bg-white px-1 text-rust-600">publicidad y relaciones públicas</span>, y ahora creo contenido UGC que no parece promocional, que no interrumpe.',
@@ -983,7 +993,7 @@
                 'mkItem1': 'Great audio quality.', 'mkItem2': 'A range of lenses for the details.', 'mkItem3': 'Lighting that doesn\'t depend on the weather.', 'mkItem4': 'Even drone shots to elevate your brand.',
                 'mkOutro': 'And all of this,', 'mkOutroHand': 'without relying on anyone else!', 'mkPillVideo': 'VIDEO', 'mkPillAudio': 'AUDIO', 'mkPillLight': 'LIGHTING', 'mkPillAerial': 'AERIAL',
                 'mkNameLights': 'Neewer lights', 'mkCatRec': 'RECORDING', 'mkCatAudio': 'AUDIO', 'mkCatAudio2': 'AUDIO', 'mkCatLight': 'LIGHTING', 'mkCatCam': 'CAMERA', 'mkCatDrone': 'DRONE',
-                'navWhy': 'WHY ME?', 'navVideos': 'VIDEOS', 'navReviews': 'REVIEWS', 'navContact': 'CONTACT', 'navMentoring': 'MENTORING',
+                'navWhy': 'WHY ME?', 'navVideos': 'VIDEOS', 'navReviews': 'REVIEWS', 'navContact': 'CONTACT', 'navMediaKit': 'MEDIA KIT', 'navMentoring': 'MENTORING',
                 'mentoringTitle': '1:1 MENTORING', 'mentoringSubtitle': 'Starting out in UGC? Book a mentoring session with me',
                 'bio1': 'Hi there! I\'m one who lost her shyness a long time ago — and hasn\'t stopped filming since.',
                 'bio2': 'I studied <span class="font-bold bg-white px-1 text-rust-600">advertising & PR</span>, and now I create UGC content that doesn\'t feel promotional, that doesn\'t interrupt.',
